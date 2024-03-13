@@ -27,10 +27,14 @@ class _BottomNavigationBarExampleState
     extends State<BottomNavigationBarExample> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
       'Bedtime',
+      style: optionStyle,
+    ),
+    Text(
+      'Log Sleep',
       style: optionStyle,
     ),
     Text(
@@ -38,7 +42,7 @@ class _BottomNavigationBarExampleState
       style: optionStyle,
     ),
     Text(
-      'Log Sleep',
+      'Settings',
       style: optionStyle,
     ),
   ];
@@ -65,16 +69,21 @@ class _BottomNavigationBarExampleState
             label: 'Bedtime',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
+            icon: Icon(Icons.bedtime),
+            label: 'Log Sleep',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.analytics),
             label: 'Sleep Stats',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'Log Sleep',
+            icon: Icon(Icons.settings),
+            label: 'Settings',
           ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
+        unselectedItemColor: Colors.black,
         onTap: _onItemTapped,
       ),
     );
