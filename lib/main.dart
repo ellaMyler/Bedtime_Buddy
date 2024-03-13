@@ -30,15 +30,15 @@ class _BottomNavigationBarExampleState
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
-      'Index 0: Home',
+      'Bedtime',
       style: optionStyle,
     ),
     Text(
-      'Index 1: Business',
+      'Sleep Stats',
       style: optionStyle,
     ),
     Text(
-      'Index 2: School',
+      'Log Sleep',
       style: optionStyle,
     ),
   ];
@@ -62,15 +62,15 @@ class _BottomNavigationBarExampleState
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'Bedtime',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.business),
-            label: 'Business',
+            label: 'Sleep Stats',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
-            label: 'School',
+            label: 'Log Sleep',
           ),
         ],
         currentIndex: _selectedIndex,
