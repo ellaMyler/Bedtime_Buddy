@@ -24,13 +24,15 @@ class SleepPage extends StatefulWidget {
 
 class _SleepPageState extends State<SleepPage> {
   TimeOfDay? bedtime;
+  DateTime? bedtimeDay;
   TimeOfDay? wakeupTime;
+  DateTime? wakeupTimeDay;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sleep App'),
+        title: Text('Bedtime/Wakeup'),
         centerTitle: true,
       ),
       body: Center(
@@ -54,10 +56,10 @@ class _SleepPageState extends State<SleepPage> {
             bedtime != null && wakeupTime != null
                 ? Column(
               children: [
-                Text('Bedtime: ${_formatTime(bedtime!)}'),
-                Text('Wakeup Time: ${_formatTime(wakeupTime!)}'),
+                Text('Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}'),
+                Text('Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}'),
                 Text(
-                    'You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!)}'),
+                    'You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!,bedtimeDay!, wakeupTimeDay!)}'),
                 ElevatedButton(
                   onPressed: () {
                     _showConfirmationDialog();
@@ -74,23 +76,34 @@ class _SleepPageState extends State<SleepPage> {
   }
 
   Future<void> _selectTime(bool isBedtime) async {
-    final TimeOfDay? pickedTime = await showDialog(
+    final DateTime? pickedDate = await showDatePicker(
       context: context,
-      builder: (BuildContext context) {
-        return TimeOfDayDialog(
-          isBedtime: isBedtime,
-          bedtime: bedtime,
-        );
-      },
+      initialDate: DateTime.now(),
+      firstDate: DateTime.now(),
+      lastDate: DateTime.now().add(Duration(days: 7)),
     );
-    if (pickedTime != null) {
-      if (isBedtime) {
+
+    if (pickedDate != null) {
+      final TimeOfDay? pickedTime = await showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return TimeOfDayDialog(
+            isBedtime: isBedtime,
+            pickedDate: pickedDate,
+            bedtime: bedtime,
+          );
+        },
+      );
+
+      if (pickedTime != null) {
         setState(() {
-          bedtime = pickedTime;
-        });
-      } else {
-        setState(() {
-          wakeupTime = pickedTime;
+          if (isBedtime) {
+            bedtime = pickedTime;
+            bedtimeDay = pickedDate;
+          } else {
+            wakeupTime = pickedTime;
+            wakeupTimeDay = pickedDate;
+          }
         });
       }
     }
@@ -106,8 +119,8 @@ class _SleepPageState extends State<SleepPage> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Bedtime: ${_formatTime(bedtime!)}'),
-              Text('Wakeup Time: ${_formatTime(wakeupTime!)}'),
+              Text('Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}'),
+              Text('Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}'),
             ],
           ),
           actions: <Widget>[
@@ -129,13 +142,26 @@ class _SleepPageState extends State<SleepPage> {
     final period = time.period == DayPeriod.am ? 'AM' : 'PM';
     return '$hour:$minute $period';
   }
-  String _calculateSleepDuration(TimeOfDay bedtime, TimeOfDay wakeupTime) {
-    final bedTimeInMinutes = bedtime.hour * 60 + bedtime.minute;
-    final wakeupTimeInMinutes = wakeupTime.hour * 60 + wakeupTime.minute;
-    final durationInMinutes = wakeupTimeInMinutes - bedTimeInMinutes;
 
-    final hours = durationInMinutes ~/ 60;
-    final minutes = durationInMinutes % 60;
+  String _formatDate(DateTime date) {
+    final day = date.day.toString().padLeft(2, '0');
+    final month = date.month.toString().padLeft(2, '0');
+    final year = date.year.toString();
+    return '$day/$month/$year';
+  }
+
+  String _calculateSleepDuration(TimeOfDay bedtime, TimeOfDay wakeupTime, DateTime bedtimeDay, DateTime wakeupTimeDay) {
+    final bedtimeDateTime = DateTime(bedtimeDay.year, bedtimeDay.month, bedtimeDay.day, bedtime.hour, bedtime.minute);
+    final wakeupDateTime = DateTime(wakeupTimeDay.year, wakeupTimeDay.month, wakeupTimeDay.day, wakeupTime.hour, wakeupTime.minute);
+
+    // Add 1 day to wakeup time if it's before bedtime
+    if (wakeupDateTime.isBefore(bedtimeDateTime)) {
+      wakeupDateTime.add(Duration(days: 1));
+    }
+
+    final duration = wakeupDateTime.difference(bedtimeDateTime);
+    final hours = duration.inHours;
+    final minutes = duration.inMinutes.remainder(60);
 
     String durationText = '$hours hour';
     if (hours != 1) {
@@ -153,10 +179,12 @@ class _SleepPageState extends State<SleepPage> {
 
 class TimeOfDayDialog extends StatefulWidget {
   final bool isBedtime;
+  final DateTime pickedDate;
   final TimeOfDay? bedtime;
 
   TimeOfDayDialog({
     required this.isBedtime,
+    required this.pickedDate,
     required this.bedtime,
   });
 
@@ -180,6 +208,10 @@ class _TimeOfDayDialogState extends State<TimeOfDayDialog> {
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          ListTile(
+            title: Text('Select Date'),
+            subtitle: Text('${_formatDate(widget.pickedDate)}'),
+          ),
           ListTile(
             title: Text('Select Time'),
             trailing: TextButton(
@@ -213,21 +245,24 @@ class _TimeOfDayDialogState extends State<TimeOfDayDialog> {
           child: Text('Cancel'),
         ),
         TextButton(
-          onPressed: widget.isBedtime
-              ? (_selectedTime.hour > DateTime.now().hour ||
-              (_selectedTime.hour == DateTime.now().hour && _selectedTime.minute > DateTime.now().minute)
-              ? () => Navigator.of(context).pop(_selectedTime)
-              : null)
-              : (_selectedTime.hour > widget.bedtime!.hour ||
-              (_selectedTime.hour == widget.bedtime!.hour && _selectedTime.minute > widget.bedtime!.minute)
-              ? () => Navigator.of(context).pop(_selectedTime)
-              : null),
+          onPressed: () {
+            Navigator.of(context).pop(_selectedTime);
+          },
           child: Text('OK'),
         ),
       ],
     );
   }
+
+  String _formatDate(DateTime date) {
+    final day = date.day.toString().padLeft(2, '0');
+    final month = date.month.toString().padLeft(2, '0');
+    final year = date.year.toString();
+    return '$day/$month/$year';
+  }
 }
+
+
 
 
 
