@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'app_ui.dart';
-/// Flutter code sample for [BottomNavigationBar].
 
 // The main file accesses MainScreen class from app_ui.dart to generate the app.
 void main() => runApp(const SleepTrackerApp());
