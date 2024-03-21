@@ -4,7 +4,6 @@ import 'package:firebase_core/firebase_core.dart';
 
 final databaseReference = FirebaseDatabase.instance.ref();
 
-void sendMessage (String message) async {
-  String name = "Enter title here";
-  databaseReference.push().set({'Sender':name, 'message':message});
+void sendBedtime(String type, String dayOfWeek, String timeOfDay) async {
+  databaseReference.push().set({'Type':type, 'Day of Week':dayOfWeek, 'Time of Day':timeOfDay});
 }
