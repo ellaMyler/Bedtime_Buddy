@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'database.dart';
 import 'package:flutter/material.dart';
 
 //Log Sleep Page
@@ -270,13 +270,14 @@ class _SleepLoggingPageState extends State<SleepLoggingPage> {
 
   void _logSleep() {
     String sleepDuration = '$_hoursSlept hours and $_minutesSlept minutes';
+    String monthDay = '${widget.month.toString().padLeft(2, '0')}/${widget.day.toString().padLeft(2, '0')}'; // Generating month-day format (e.g., 05/02)
+    // Original functionality: Display dialog
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Sleep Logged'),
-          content: Text('On ${_getMonthName(widget.month)} ${widget
-              .day} you slept $sleepDuration.'),
+          content: Text('On ${_getMonthName(widget.month)} ${widget.day} you slept $sleepDuration.'),
           actions: <Widget>[
             TextButton(
               onPressed: () {
@@ -288,7 +289,13 @@ class _SleepLoggingPageState extends State<SleepLoggingPage> {
         );
       },
     );
+
+    // Logging sleep data into the Firebase Realtime Database
+    String message = 'On ${_getMonthName(widget.month)} ${widget.day} $monthDay you slept $sleepDuration';
+    sendMessage(message);
   }
+
+
 
   String _getMonthName(int monthNumber) {
     switch (monthNumber) {
