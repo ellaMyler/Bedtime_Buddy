@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sleep_tracker/database.dart';
 import 'app_ui.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -9,6 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const SleepTrackerApp());
+  //sendMessage('Test');
 }
 
 class SleepTrackerApp extends StatelessWidget{
