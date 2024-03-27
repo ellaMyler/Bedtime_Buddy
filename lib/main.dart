@@ -10,7 +10,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const SleepTrackerApp());
-  //sendMessage('Test');
 }
 
 class SleepTrackerApp extends StatelessWidget{
