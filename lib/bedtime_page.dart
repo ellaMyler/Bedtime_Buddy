@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sleep_tracker/database.dart';
 
 //Bed Time Page
 
@@ -53,6 +54,8 @@ class _BedtimePageState extends State<BedtimePage> {
                 ElevatedButton(
                   onPressed: () {
                     _showConfirmationDialog();
+                    sendBedtime('Bedtime', bedtimeDay.toString(), bedtime.toString());
+                    sendBedtime('WakeupTime', wakeupTimeDay.toString(), wakeupTime.toString());
                   },
                   child: Text('Confirm'),
                 ),
