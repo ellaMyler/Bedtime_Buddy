@@ -3,7 +3,6 @@ import 'package:sleep_tracker/database.dart';
 import 'app_ui.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
-/// Flutter code sample for [BottomNavigationBar].
 
 // The main file accesses MainScreen class from app_ui.dart to generate the app.
 void main() async {

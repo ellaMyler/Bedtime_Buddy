@@ -3,6 +3,7 @@ import 'bedtime_page.dart';
 import 'log_sleep_page.dart';
 import 'stats_page.dart';
 import 'settings_page.dart';
+import 'videos_page.dart';
 
 //Contains the UI settings for the app.
 //Changes to the UI are done here
@@ -22,6 +23,7 @@ class _MainScreenState extends State<MainScreen> {
     //Separated Classes located in their respective files
     BedtimePage(),
     LogSleepPage(),
+    VideosPage(),
     SleepStatsPage(),
     SettingsPage(),
   ];
@@ -51,6 +53,10 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.bedtime),
             label: 'Log Sleep',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.play_arrow),
+            label: 'Videos',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.analytics),
