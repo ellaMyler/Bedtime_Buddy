@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.sleep_tracker.app-mergeDebugResources-9:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.sleep_tracker.app-mergeDebugResources-15:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\wwwle\\Desktop\\Classes\\Year 3\\Spring Semester\\Software Engineering\\1. Group Project\\sleep_tracker\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\eatcu\\Desktop\\Code\\Software Engineering\\Group Projects\\sleep_tracker\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
