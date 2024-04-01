@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sleep_tracker/database.dart';
 
-//Bed Time Page
-
 class BedtimePage extends StatefulWidget {
   const BedtimePage({Key? key}) : super(key: key);
 
@@ -12,58 +10,84 @@ class BedtimePage extends StatefulWidget {
 
 class _BedtimePageState extends State<BedtimePage> {
   TimeOfDay? bedtime;
-
   DateTime? bedtimeDay;
-
   TimeOfDay? wakeupTime;
-
   DateTime? wakeupTimeDay;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bedtime/Wakeup'),
+        title: const Text('Bedtime/Wakeup'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                _selectTime(true);
-              },
-              child: Text('Set Bedtime'),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          const Align(
+            alignment: Alignment.topCenter,
+            child: Padding(
+              padding: EdgeInsets.only(top: 40.0),
+              child: Text(
+                  '!Recommended sleep time is 8 hours!',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                )
+              ),
+
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                _selectTime(false);
-              },
-              child: Text('Set Wakeup Time'),
-            ),
-            SizedBox(height: 20),
-            bedtime != null && wakeupTime != null
-                ? Column(
+          ),
+          const Expanded(
+            child: SizedBox(),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text('Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}'),
-                Text('Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}'),
-                Text(
-                    'You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!,bedtimeDay!, wakeupTimeDay!)}'),
                 ElevatedButton(
                   onPressed: () {
-                    _showConfirmationDialog();
-                    sendBedtime('Bedtime', bedtimeDay.toString(), bedtime.toString());
-                    sendBedtime('WakeupTime', wakeupTimeDay.toString(), wakeupTime.toString());
+                    _selectTime(true);
                   },
-                  child: Text('Confirm'),
+                  child: const Text('Set Bedtime'),
                 ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    _selectTime(false);
+                  },
+                  child: const Text('Set Wakeup Time'),
+                ),
+                const SizedBox(height: 20),
+                bedtime != null && wakeupTime != null
+                    ? Column(
+                    children: [
+                      Text(
+                          'Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}'),
+                      Text(
+                          'Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}'),
+                      Text(
+                          'You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!, bedtimeDay!, wakeupTimeDay!)}'),
+                      const SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: () {
+                          _showConfirmationDialog();
+                          sendBedtime('Bedtime',
+                              bedtimeDay.toString(), bedtime.toString());
+                          sendBedtime('WakeupTime',
+                              wakeupTimeDay.toString(), wakeupTime.toString());
+                      },
+                      child: const Text('Confirm'),
+                    ),
+                    const SizedBox(height: 40),
+                  ],
+                )
+                    : const SizedBox(height: 20),
               ],
-            )
-                : Container(),
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -73,7 +97,7 @@ class _BedtimePageState extends State<BedtimePage> {
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime.now(),
-      lastDate: DateTime.now().add(Duration(days: 7)),
+      lastDate: DateTime.now().add(const Duration(days: 7)),
     );
 
     if (pickedDate != null) {
@@ -107,7 +131,7 @@ class _BedtimePageState extends State<BedtimePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Confirmation'),
+          title: const Text('Confirmation'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,7 +145,7 @@ class _BedtimePageState extends State<BedtimePage> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Close'),
+              child: const Text('Close'),
             ),
           ],
         );
@@ -149,7 +173,7 @@ class _BedtimePageState extends State<BedtimePage> {
 
     // Add 1 day to wakeup time if it's before bedtime
     if (wakeupDateTime.isBefore(bedtimeDateTime)) {
-      wakeupDateTime.add(Duration(days: 1));
+      wakeupDateTime.add(const Duration(days: 1));
     }
 
     final duration = wakeupDateTime.difference(bedtimeDateTime);
@@ -202,11 +226,11 @@ class _TimeOfDayDialogState extends State<TimeOfDayDialog> {
         mainAxisSize: MainAxisSize.min,
         children: [
           ListTile(
-            title: Text('Select Date'),
+            title: const Text('Select Date'),
             subtitle: Text('${_formatDate(widget.pickedDate)}'),
           ),
           ListTile(
-            title: Text('Select Time'),
+            title: const Text('Select Time'),
             trailing: TextButton(
               onPressed: () async {
                 final TimeOfDay? picked = await showTimePicker(
@@ -235,13 +259,13 @@ class _TimeOfDayDialogState extends State<TimeOfDayDialog> {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          child: Text('Cancel'),
+          child: const Text('Cancel'),
         ),
         TextButton(
           onPressed: () {
             Navigator.of(context).pop(_selectedTime);
           },
-          child: Text('OK'),
+          child: const Text('OK'),
         ),
       ],
     );
