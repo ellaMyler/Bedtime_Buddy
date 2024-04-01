@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:app_settings/app_settings.dart';
-import 'notification_manager.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'notification_controller.dart';
 
