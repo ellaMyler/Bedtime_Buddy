@@ -8,7 +8,7 @@ class NotificationService {
       [
         NotificationChannel(
           channelGroupKey: "basic_channel_group",
-          channelKey: "local_channel",
+          channelKey: 'local_channel',
           channelName: "Basic Notification",
           channelDescription: "Test notifications channel",
         )
@@ -34,10 +34,11 @@ class NotificationService {
 
   //Test notification to make sure the implementation works properly
   static void showTestNotification() {
+    // Ensure that initNotifications() has been called before creating notifications
     AwesomeNotifications().createNotification(
       content: NotificationContent(
         id: 1,
-        channelKey: "local_channel",
+        channelKey: 'local_channel',
         title: "Test Notification",
         body: "This notification works!",
       ),
@@ -45,32 +46,30 @@ class NotificationService {
   }
 
   static Future<void> sendBedtimeNotification(DateTime? bedtimeDateTime) async {
-
     String localTimeZone = await AwesomeNotifications().getLocalTimeZoneIdentifier();
     String utcTimeZone = await AwesomeNotifications().getLocalTimeZoneIdentifier();
 
     await AwesomeNotifications().createNotification(
       schedule: NotificationCalendar(
-      day: bedtimeDateTime!.day,
-        month:bedtimeDateTime!.month,
-        year:bedtimeDateTime!.year,
+        day: bedtimeDateTime!.day,
+        month: bedtimeDateTime!.month,
+        year: bedtimeDateTime!.year,
         hour: bedtimeDateTime!.hour,
         minute: bedtimeDateTime!.minute,
       ),
-
-        content: NotificationContent(
-          id: DateTime.now().millisecondsSinceEpoch.remainder(100000), // Ensures a unique ID for the notification
-          channelKey: 'local_channel',
-          title: 'Time for Bed!',
-          body: "It is time for you to go to bed",
-          wakeUpScreen: true,
-          category: NotificationCategory.Reminder,
-          notificationLayout: NotificationLayout.BigPicture,
-          bigPicture: 'asset://assets/images/delivery.jpeg',
-          payload: {'uuid': 'uuid-test'},
-          autoDismissible: false,
-        ),);
+      content: NotificationContent(
+        id: DateTime.now().millisecondsSinceEpoch.remainder(100000), // Ensures a unique ID for the notification
+        channelKey: 'local_channel',
+        title: 'Time for Bed!',
+        body: "It is time for you to go to bed",
+        wakeUpScreen: true,
+        category: NotificationCategory.Reminder,
+        notificationLayout: NotificationLayout.BigPicture,
+        bigPicture: 'asset://assets/images/delivery.jpeg',
+        payload: {'uuid': 'uuid-test'},
+        autoDismissible: false,
+      ),
+    );
   }
-
-
 }
+
