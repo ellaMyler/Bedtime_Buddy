@@ -60,6 +60,13 @@ class _BedtimePageState extends State<BedtimePage> {
                   child: const Text('Set Wakeup Time'),
                 ),
                 const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    //_setPrevious();
+                  },
+                  child: const Text('Set Previous'),
+                ),
+                const SizedBox(height: 20),
                 bedtime != null && wakeupTime != null
                     ? Column(
                     children: [
@@ -90,6 +97,18 @@ class _BedtimePageState extends State<BedtimePage> {
         ],
       ),
     );
+  }
+
+  void _setPrevious(DateTime? previousBTDay, TimeOfDay? previousBTTime, DateTime? previousWTDay, TimeOfDay? previousWTTime) {
+
+  }
+
+  DateTime? getDay(String type, String ) {
+
+  }
+
+  TimeOfDay? getTime() {
+
   }
 
   Future<void> _selectTime(bool isBedtime) async {
