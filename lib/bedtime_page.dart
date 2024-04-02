@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sleep_tracker/database.dart';
+import 'notification_maker.dart';
 
 //Bed Time Page
 class BedtimePage extends StatefulWidget {
@@ -119,6 +120,18 @@ class _BedtimePageState extends State<BedtimePage> {
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
+
+                //Notification Code
+                final bedtimeDateTime = DateTime(
+                  bedtimeDay.year,
+                  bedtimeDay!.month,
+                  bedtimeDay!.day,
+                  bedtime!.hour,
+                  bedtime!.minute,
+                );
+                NotificationService.sendBedtimeNotification(bedtimeDateTime);
+                //End of Notification Code
+
               },
               child: Text('Close'),
             ),

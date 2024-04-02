@@ -43,4 +43,28 @@ class NotificationService {
       ),
     );
   }
+
+  static Future<void> sendBedtimeNotification(DateTime bedtimeDateTime) async {
+
+    String localTimeZone = await AwesomeNotifications().getLocalTimeZoneIdentifier();
+    String utcTimeZone = await AwesomeNotifications().getLocalTimeZoneIdentifier();
+
+    await AwesomeNotifications().createNotification(
+
+        content: NotificationContent(
+          id: DateTime.now().millisecondsSinceEpoch.remainder(100000), // Ensures a unique ID for the notification
+          channelKey: 'local_channel',
+          title: 'Just in time!',
+          body: "This notification works!",
+          wakeUpScreen: true,
+          category: NotificationCategory.Reminder,
+          notificationLayout: NotificationLayout.BigPicture,
+          bigPicture: 'asset://assets/images/delivery.jpeg',
+          payload: {'uuid': 'uuid-test'},
+          autoDismissible: false,
+        ),
+        schedule: NotificationCalendar.fromDate(date: scheduleTime));
+  }
+
+
 }
