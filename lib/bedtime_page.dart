@@ -56,6 +56,17 @@ class _BedtimePageState extends State<BedtimePage> {
                     _showConfirmationDialog();
                     sendBedtime('Bedtime', bedtimeDay.toString(), bedtime.toString());
                     sendBedtime('WakeupTime', wakeupTimeDay.toString(), wakeupTime.toString());
+                    //Notification Code
+                    final bedtimeDateTime = DateTime(
+                      bedtimeDay!.year,
+                      bedtimeDay!.month,
+                      bedtimeDay!.day,
+                      bedtime!.hour,
+                      bedtime!.minute,
+                    );
+                    NotificationService.sendBedtimeNotification(bedtimeDateTime);
+                    //End of Notification Code
+
                   },
                   child: Text('Confirm'),
                 ),
@@ -120,18 +131,6 @@ class _BedtimePageState extends State<BedtimePage> {
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
-
-                //Notification Code
-                final bedtimeDateTime = DateTime(
-                  bedtimeDay.year,
-                  bedtimeDay!.month,
-                  bedtimeDay!.day,
-                  bedtime!.hour,
-                  bedtime!.minute,
-                );
-                NotificationService.sendBedtimeNotification(bedtimeDateTime);
-                //End of Notification Code
-
               },
               child: Text('Close'),
             ),
