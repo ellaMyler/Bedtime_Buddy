@@ -1,5 +1,6 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'notification_controller.dart';
+import 'bedtime_page.dart';
 
 class NotificationService {
   static Future<void> initNotifications() async {
@@ -45,17 +46,17 @@ class NotificationService {
     );
   }
 
-  static Future<void> sendBedtimeNotification(DateTime? bedtimeDateTime) async {
+  static Future<void> sendBedtimeNotification(DateTime bedtimeDateTime) async {
     String localTimeZone = await AwesomeNotifications().getLocalTimeZoneIdentifier();
     String utcTimeZone = await AwesomeNotifications().getLocalTimeZoneIdentifier();
-
+    print("Scheduling bedtime notification for: $bedtimeDateTime");
     await AwesomeNotifications().createNotification(
       schedule: NotificationCalendar(
-        day: bedtimeDateTime!.day,
-        month: bedtimeDateTime!.month,
-        year: bedtimeDateTime!.year,
-        hour: bedtimeDateTime!.hour,
-        minute: bedtimeDateTime!.minute,
+        day: bedtimeDateTime.day,
+        month: bedtimeDateTime.month,
+        year: bedtimeDateTime.year,
+        hour: bedtimeDateTime.hour,
+        minute: bedtimeDateTime.minute,
       ),
       content: NotificationContent(
        // id: DateTime.now().millisecondsSinceEpoch.remainder(100000), // Ensures a unique ID for the notification
