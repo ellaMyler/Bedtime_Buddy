@@ -1,3 +1,4 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 //Stats Page
@@ -19,7 +20,7 @@ class SleepStatsPage extends StatelessWidget {
     ),
               SizedBox(height: 15),
               Container(
-                width: 250,
+                width: 300,
                 height: 200,
                 decoration: BoxDecoration(
                   border: Border.all(color:Colors.black),
@@ -30,7 +31,7 @@ class SleepStatsPage extends StatelessWidget {
                 Text('Goals', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               SizedBox(height: 15),
               Container(
-                width: 250,
+                width: 300,
                 height: 200,
                 decoration: BoxDecoration(
                   border: Border.all(color:Colors.black),
@@ -40,14 +41,42 @@ class SleepStatsPage extends StatelessWidget {
               const Text('Weekly Summary', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               SizedBox(height: 15),
               Container(
-                width: 250,
+                width: 300,
                 height: 200,
                 decoration: BoxDecoration(
                   border: Border.all(color:Colors.black),
                 ),
+                child: Column (
+                  children:  [
+                    Text('On Average, you slept ___ hours this week',
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)
+                    ),
+                    Text('On Average, your stress level was __ this week', 
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)
+                    ),
+                    Text('On Average, your quality of sleep this week was ___ ',
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)
+                    ),
+                  ]
+                )
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  readData();
+                },
+                child: Text('Test'),
               ),
             ]
         )
     ));
   }
+   void readData() async {
+     final ref = FirebaseDatabase.instance.ref();
+     final snapshot = await ref.child('-NtXYmtubEemw7cEQFNI/message').get();
+     if (snapshot.exists){
+       print(snapshot.value);
+     } else {
+       print('No data available');
+     }
+   }
 }
