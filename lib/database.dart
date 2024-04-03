@@ -10,7 +10,17 @@ void sendBedtime(String type, String dayOfWeek, String timeOfDay) async {
       {'Type': type, 'Day of Week': dayOfWeek, 'Time of Day': timeOfDay});
 }
 
-void sendMessage (String message) async {
+void sendMessage(String message) async {
   databaseReference.push().set({'Logged Sleep':message});
 
+}
+
+void readData() async {
+  final ref = FirebaseDatabase.instance.ref();
+  final snapshot = await ref.child('-NtXYmtubEemw7cEQFNI/message').get();
+  if (snapshot.exists){
+    print(snapshot.value);
+  } else {
+    print('No data available');
+  }
 }
