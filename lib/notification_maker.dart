@@ -58,18 +58,19 @@ class NotificationService {
         minute: bedtimeDateTime!.minute,
       ),
       content: NotificationContent(
-        id: DateTime.now().millisecondsSinceEpoch.remainder(100000), // Ensures a unique ID for the notification
+       // id: DateTime.now().millisecondsSinceEpoch.remainder(100000), // Ensures a unique ID for the notification
+        id: 2,
         channelKey: 'local_channel',
         title: 'Time for Bed!',
         body: "It is time for you to go to bed",
-        wakeUpScreen: true,
-        category: NotificationCategory.Reminder,
-        notificationLayout: NotificationLayout.BigPicture,
-        bigPicture: 'asset://assets/images/delivery.jpeg',
-        payload: {'uuid': 'uuid-test'},
-        autoDismissible: false,
       ),
     );
   }
 }
 
+/*wakeUpScreen: true,
+        category: NotificationCategory.Reminder,
+        notificationLayout: NotificationLayout.BigPicture,
+        bigPicture: 'asset://assets/images/delivery.jpeg',
+        payload: {'uuid': 'uuid-test'},
+        autoDismissible: false, */
