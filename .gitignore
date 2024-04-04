@@ -1,10 +1,4 @@
-
-/.dart_tool
 /.dart_tool
 /build
-/build
-/.dart_tool
-
-/.dart_tool
-/.dart_tool
-/build
+/.idea
+*.bin

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'database.dart';
-import 'package:flutter/material.dart';
 
 //Log Sleep Page
 class LogSleepPage extends StatefulWidget {
