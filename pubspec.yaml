@@ -68,15 +68,18 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - lib/assets/videos/0.mp4
     - lib/assets/videos/1.mp4
     - lib/assets/videos/2.mp4
     - lib/assets/videos/3.mp4
-    - lib/assets/thumbnails/0.png
+    - lib/assets/videos/4.mp4
+    - lib/assets/videos/5.mp4
+    - lib/assets/videos/6.mp4
     - lib/assets/thumbnails/1.png
     - lib/assets/thumbnails/2.png
     - lib/assets/thumbnails/3.png
     - lib/assets/thumbnails/4.png
+    - lib/assets/thumbnails/5.png
+    - lib/assets/thumbnails/6.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

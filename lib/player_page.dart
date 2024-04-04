@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'videos_page.dart';
 
 class PlayerPage extends StatefulWidget {
   final int index;
-  const PlayerPage({Key? key, required this.index}) : super(key: key);
+  final int videoNum;
+  const PlayerPage({Key? key, required this.index, required this.videoNum}) : super(key: key);
 
   @override
   _PlayerPageState createState() => _PlayerPageState();
@@ -14,8 +14,6 @@ class _PlayerPageState extends State<PlayerPage> {
   late VideoPlayerController _controller;
   late String videoPath;
 
-  get videoNum => 0;
-
   @override
   void initState() {
     super.initState();
@@ -24,18 +22,27 @@ class _PlayerPageState extends State<PlayerPage> {
 
   // Method to initialize video based on videoNum
   void _initializeVideo() {
-    switch (videoNum) { // Use widget.index to get videoNum
-      case 0:
+    switch ('${widget.videoNum}') { // Use widget.index to get videoNum
+      case '0':
         videoPath = '0';
         break;
-      case 1:
+      case '1':
         videoPath = '1';
         break;
-      case 2:
+      case '2':
         videoPath = '2';
         break;
-      case 3:
+      case '3':
         videoPath = '3';
+        break;
+      case '4':
+        videoPath = '4';
+        break;
+      case '5':
+        videoPath = '5';
+        break;
+      case '6':
+        videoPath = '6';
         break;
       default:
         videoPath = '0';

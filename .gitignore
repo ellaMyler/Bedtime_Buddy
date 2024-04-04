@@ -2,3 +2,7 @@
 /build
 /.idea
 *.bin
+/.dart_tool
+/.dart_tool
+.flutter-plugins
+/build

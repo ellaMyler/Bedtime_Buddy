@@ -9,18 +9,16 @@ class VideosPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(scaffoldBackgroundColor: const Color(0xFFF3FFF6)),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Videos Page'),
-        ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Card(
-            elevation: 8.0,
+            elevation: 0.0,
             child: GridView.builder(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(0.0),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
+                crossAxisCount: 1,
                 crossAxisSpacing: 12.0,
                 mainAxisSpacing: 12.0,
               ),
@@ -32,24 +30,19 @@ class VideosPage extends StatelessWidget {
                   onTap: () {
                     // Navigate to a new page when tapped
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (_) => PlayerPage(index: videoNum), // Use the extracted number
+                      builder: (BuildContext context) => PlayerPage(videoNum: videoNum, index: videoNum,), // Use the extracted number
                     ));
                   },
                   child: GridTile(
-                    header: GridTileBar(
-                      title: Text('$videoNum',
-                          style: const TextStyle(color: Colors.black)),
+                    header: const GridTileBar(
+                      title: Text('Duration 60 min',
+                          style: TextStyle(color: Colors.white)),
                     ),
                     child: Container(
                       margin: const EdgeInsets.all(12.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12.0),
-                        gradient: const RadialGradient(
-                          colors: <Color>[Color(0x0F88EEFF), Color(0x2F0099BB)],
-                        ),
-                      ),
-                      child: FlutterLogo(
-                        style: FlutterLogoStyle.values[random.nextInt(FlutterLogoStyle.values.length)],
+                      child: Image.asset(
+                        'lib/assets/thumbnails/$videoNum.png', // Change the path to your image assets
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
