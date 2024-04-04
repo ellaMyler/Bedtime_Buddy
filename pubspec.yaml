@@ -38,6 +38,9 @@ dependencies:
   firebase_core: ^1.17.1
   firebase_database: ^9.0.16
   firebase_core_platform_interface: 4.5.1
+  flutter_local_notifications: ^17.0.0
+  app_settings: ^5.1.1
+  awesome_notifications: ^0.9.3+1
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sleep_tracker/database.dart';
+import 'notification_maker.dart';
 
 class BedtimePage extends StatefulWidget {
   const BedtimePage({Key? key}) : super(key: key);
@@ -49,6 +50,19 @@ class _BedtimePageState extends State<BedtimePage> {
                 ElevatedButton(
                   onPressed: () {
                     _selectTime(true);
+                    _showConfirmationDialog();
+                    sendBedtime('Bedtime', bedtimeDay.toString(), bedtime.toString());
+                    sendBedtime('WakeupTime', wakeupTimeDay.toString(), wakeupTime.toString());
+                    //Notification Code
+                    final bedtimeDateTime = DateTime(
+                      bedtimeDay!.year,
+                      bedtimeDay!.month,
+                      bedtimeDay!.day,
+                      bedtime!.hour,
+                      bedtime!.minute,
+                    );
+                    NotificationService.sendBedtimeNotification(bedtimeDateTime);
+                    //End of Notification Code
                   },
                   child: const Text('Set Bedtime'),
                 ),
