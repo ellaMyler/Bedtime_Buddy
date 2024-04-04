@@ -1,9 +1,18 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 //Stats Page
-class SleepStatsPage extends StatelessWidget {
+class SleepStatsPage extends StatefulWidget {
   const SleepStatsPage({Key? key}) : super(key: key);
+
+  @override
+  _SleepStatsPageState createState() => _SleepStatsPageState();
+}
+class _SleepStatsPageState extends State<SleepStatsPage> {
+  TextEditingController _controller = TextEditingController();
+  final List<String> goals = [];
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +39,38 @@ class SleepStatsPage extends StatelessWidget {
               SizedBox(height: 20),
                 Text('Goals', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               SizedBox(height: 15),
-              Container(
-                width: 300,
-                height: 200,
-                decoration: BoxDecoration(
-                  border: Border.all(color:Colors.black),
+                Container(
+                  width: 300,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                  ),
+                  child: Column(
+                    children: [
+                      Expanded(
+                          child: ListView.builder(
+                            itemCount: goals.length,
+                            itemBuilder: (context, index) {
+                               return ListTile(
+                                title: Text(goals[index]),
+                              );
+                          },
+                      ),
                 ),
+                      TextField(
+                        controller: _controller,
+                        decoration: InputDecoration(
+                            hintText: 'Enter your goal'
+                        ),
+                        onSubmitted: (value) {
+                          _controller.clear();
+                          setState(() {
+                            goals.add(value);
+                          });
+                        },
+                      ),
+                    ],
+                  ),
               ),
               SizedBox(height: 20),
               const Text('Weekly Summary', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
