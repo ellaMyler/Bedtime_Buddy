@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'database.dart';
+<<<<<<< HEAD
 import 'package:firebase_core/firebase_core.dart';
+=======
+>>>>>>> troy_main
 
 // Log Sleep Page
 class LogSleepPage extends StatefulWidget {
