@@ -3,13 +3,9 @@ import 'package:sleep_tracker/database.dart';
 import 'app_ui.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
-<<<<<<< HEAD
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'notification_maker.dart';
 
-/// Flutter code sample for [BottomNavigationBar].
-=======
->>>>>>> troy_main
 
 // The main file accesses MainScreen class from app_ui.dart to generate the app.
 void main() async {
