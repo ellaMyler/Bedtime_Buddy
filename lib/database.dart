@@ -11,8 +11,9 @@ void sendBedtime(String type, String dayOfWeek, String timeOfDay) async {
 }
 
 void sendSleepLog (String dateLogged, String sleepThoughts, String dreamNight, String sleepQuality, String stressLevel, int hours, int minutes) async {
-  String sanitizedKey = dateLogged.replaceAll(RegExp(r'[#$/\[\]]'), ''); //Removes any illegal characters
-  //Makes it so data is saved in the same places
+  String sanitizedKey = dateLogged.replaceAll(RegExp(r'[#$/\[\]]'), ''); // Replace invalid characters with an empty string
+
+  // Store data as a map with ordered fields
   Map<String, dynamic> sleepLogData = {
     'Date Logged': dateLogged,
     'Thoughts on your sleep': sleepThoughts,
@@ -23,6 +24,7 @@ void sendSleepLog (String dateLogged, String sleepThoughts, String dreamNight, S
     'Minutes slept': minutes,
   };
 
+  // Set the data in Firestore
   await databaseReference.child(sanitizedKey).set(sleepLogData);
 }
 
