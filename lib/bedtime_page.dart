@@ -80,10 +80,8 @@ class _BedtimePageState extends State<BedtimePage> {
                       ElevatedButton(
                         onPressed: () {
                           _showConfirmationDialog();
-                          sendBedtime('Bedtime',
-                              bedtimeDay.toString(), bedtime.toString());
-                          sendBedtime('WakeupTime',
-                              wakeupTimeDay.toString(), wakeupTime.toString());
+                          //getSleepTime('April 4, 2024'); // Test
+                          hasDate('April 4, 2024'); // Test
                       },
                       child: const Text('Confirm'),
                     ),
