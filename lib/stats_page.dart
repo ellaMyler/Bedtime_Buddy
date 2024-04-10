@@ -68,6 +68,12 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
                                         },
                                     ),
                                     ),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Text('Sun'), Text('Mon'), Text('Tue'), Text('Wed'), Text('Thu'), Text('Fri'), Text('Sat'),
+                                    ],
                                   )
                                 ]
                             );
