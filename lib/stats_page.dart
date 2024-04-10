@@ -14,7 +14,6 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
   TextEditingController _controller = TextEditingController();
   final List<String> goals = [];
   List<bool> isChecked = List.generate(7, (index) => false);
-  //List<List<bool>> checkboxes = [];
 
   @override
   Widget build(BuildContext context) {
@@ -41,40 +40,40 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
               SizedBox(height: 20),
                 Text('Goals', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               SizedBox(height: 15),
-                Container(
-                  width: 350,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
-                  ),
-                  child: Column( //STOP BACKING UP HERE
-                    children: [
-                      Expanded(
-                          child: ListView.builder(
-                              //shrinkWrap: true,
-                            itemCount: goals.length,
-                            itemBuilder: (context, index) {
-                               return Column(
-                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                   children: [
-                                      ListTile(
-                                       title: Text(goals[index], style: TextStyle(fontWeight: FontWeight.bold)),
-                                      ),
-                                      Row(
-                                        children: List.generate(7, (index) => Checkbox(
-                                            value: isChecked[index],
-                                            onChanged: (bool? value) {
-                                              setState(() {
-                                                isChecked[index] = value ?? false;
-                                              });
-                                              },
-                                          ),
-                                        ),
-                                      )
-                                   ]
-                               );
-                              }),
-                      ),
+              Container(
+                width: 350,
+                height: 200,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                ),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: ListView.builder(
+                          itemCount: goals.length,
+                          itemBuilder: (context, index) {
+                            return Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  ListTile(
+                                    title: Text(goals[index], style: TextStyle(fontWeight: FontWeight.bold)),
+                                  ),
+                                  Row(
+                                    children: List.generate(7, (index) => Checkbox(
+                                      value: isChecked[index],
+                                      onChanged: (bool? value) {
+                                        setState(() {
+                                          isChecked[index] = value ?? false;
+                                        });
+                                        },
+                                    ),
+                                    ),
+                                  )
+                                ]
+                            );
+                          }
+                          ),
+                    ),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Container(
@@ -123,10 +122,10 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
                 },
                 child: Text('Test'),
               ),
-                    ]
-                  ),
+            ]
+          ),
         )
-              );
+    );
   }
    void readData() async {
      final ref = FirebaseDatabase.instance.ref();
