@@ -13,6 +13,8 @@ class SleepStatsPage extends StatefulWidget {
 class _SleepStatsPageState extends State<SleepStatsPage> {
   TextEditingController _controller = TextEditingController();
   final List<String> goals = [];
+  List<bool> isChecked = List.generate(7, (index) => false);
+  //List<List<bool>> checkboxes = [];
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +28,10 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
             children: [
               const Center(child:
                 Text('(to be made in future sprint)', style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal)),
-    ),
+              ),
               SizedBox(height: 15),
               Container(
-                width: 300,
+                width: 350,
                 height: 200,
                 decoration: BoxDecoration(
                   border: Border.all(color:Colors.black),
@@ -40,43 +42,63 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
                 Text('Goals', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               SizedBox(height: 15),
                 Container(
-                  width: 300,
+                  width: 350,
                   height: 200,
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),
                   ),
-                  child: Column(
+                  child: Column( //STOP BACKING UP HERE
                     children: [
                       Expanded(
                           child: ListView.builder(
+                              //shrinkWrap: true,
                             itemCount: goals.length,
                             itemBuilder: (context, index) {
-                               return ListTile(
-                                title: Text(goals[index]),
-                              );
-                          },
+                               return Column(
+                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                   children: [
+                                      ListTile(
+                                       title: Text(goals[index], style: TextStyle(fontWeight: FontWeight.bold)),
+                                      ),
+                                      Row(
+                                        children: List.generate(7, (index) => Checkbox(
+                                            value: isChecked[index],
+                                            onChanged: (bool? value) {
+                                              setState(() {
+                                                isChecked[index] = value ?? false;
+                                              });
+                                              },
+                                          ),
+                                        ),
+                                      )
+                                   ]
+                               );
+                              }),
                       ),
-                ),
-                      TextField(
-                        controller: _controller,
-                        decoration: InputDecoration(
-                            hintText: 'Enter your goal'
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Container(
+                          padding: EdgeInsets.only(left: 15),
+                          child: TextField(
+                            controller: _controller, decoration: InputDecoration(hintText: 'Enter your goal'),
+                            onSubmitted: (value) {
+                              _controller.clear();
+                              setState(() {
+                                goals.add(value);
+                                isChecked;
+                              });
+                            },
+                          ),
                         ),
-                        onSubmitted: (value) {
-                          _controller.clear();
-                          setState(() {
-                            goals.add(value);
-                          });
-                        },
                       ),
                     ],
                   ),
-              ),
+                ),
               SizedBox(height: 20),
               const Text('Weekly Summary', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               SizedBox(height: 15),
               Container(
-                width: 300,
+                width: 350,
                 height: 200,
                 decoration: BoxDecoration(
                   border: Border.all(color:Colors.black),
@@ -86,7 +108,7 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
                     Text('On Average, you slept ___ hours this week',
                         style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)
                     ),
-                    Text('On Average, your stress level was __ this week', 
+                    Text('On Average, your stress level was __ this week',
                         style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)
                     ),
                     Text('On Average, your quality of sleep this week was ___ ',
@@ -101,9 +123,10 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
                 },
                 child: Text('Test'),
               ),
-            ]
+                    ]
+                  ),
         )
-    ));
+              );
   }
    void readData() async {
      final ref = FirebaseDatabase.instance.ref();
