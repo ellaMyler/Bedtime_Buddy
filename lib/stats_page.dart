@@ -51,10 +51,3 @@ class SleepStatsPage extends StatelessWidget {
     ));
   }
 }
-
-//return const Column(
-//       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//       children: [
-//         Text('Sleep Stats', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-//         Text('Goals', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))
-//       ],

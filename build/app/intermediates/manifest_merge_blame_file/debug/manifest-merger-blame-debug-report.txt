@@ -13,99 +13,99 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\android\app\src\debug\AndroidManifest.xml:6:5-66
-15-->C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\android\app\src\debug\AndroidManifest.xml:6:22-64
+15-->C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\android\app\src\debug\AndroidManifest.xml:6:5-66
+15-->C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\android\app\src\debug\AndroidManifest.xml:6:22-64
 16    <uses-permission android:name="android.permission.VIBRATE" />
-16-->C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\android\app\src\main\AndroidManifest.xml:3:5-66
-16-->C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\android\app\src\main\AndroidManifest.xml:3:22-63
+16-->C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\android\app\src\main\AndroidManifest.xml:3:5-66
+16-->C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\android\app\src\main\AndroidManifest.xml:3:22-63
 17    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-17-->C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\android\app\src\main\AndroidManifest.xml:4:5-81
-17-->C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\android\app\src\main\AndroidManifest.xml:4:22-78
+17-->C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\android\app\src\main\AndroidManifest.xml:4:5-81
+17-->C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\android\app\src\main\AndroidManifest.xml:4:22-78
 18    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-18-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-77
-18-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-74
+18-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-77
+18-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-74
 19    <uses-permission android:name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
-19-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-89
-19-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-86
+19-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-89
+19-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-86
 20    <uses-permission
-20-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\EcksD\.gradle\caches\transforms-3\2803978167c60a1810b0fffd95324804\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:10:5-12:38
+20-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\wwwle\.gradle\caches\transforms-3\e17eb80c981d68237585a03759b8f487\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:10:5-12:38
 21        android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
-21-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\EcksD\.gradle\caches\transforms-3\2803978167c60a1810b0fffd95324804\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:11:9-77
+21-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\wwwle\.gradle\caches\transforms-3\e17eb80c981d68237585a03759b8f487\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:11:9-77
 22        android:maxSdkVersion="22" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-22-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\EcksD\.gradle\caches\transforms-3\2803978167c60a1810b0fffd95324804\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:12:9-35
+22-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\wwwle\.gradle\caches\transforms-3\e17eb80c981d68237585a03759b8f487\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:12:9-35
 23    <!-- <uses-sdk android:minSdkVersion="14"/> -->
 24    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-24-->[com.google.firebase:firebase-database:20.0.6] C:\Users\EcksD\.gradle\caches\transforms-3\babd057b5e8ab13cf26dc75c516e2282\transformed\jetified-firebase-database-20.0.6\AndroidManifest.xml:25:5-79
-24-->[com.google.firebase:firebase-database:20.0.6] C:\Users\EcksD\.gradle\caches\transforms-3\babd057b5e8ab13cf26dc75c516e2282\transformed\jetified-firebase-database-20.0.6\AndroidManifest.xml:25:22-76
+24-->[com.google.firebase:firebase-database:20.0.6] C:\Users\wwwle\.gradle\caches\transforms-3\5899eb60012ca454c1bb26444357f4e3\transformed\jetified-firebase-database-20.0.6\AndroidManifest.xml:25:5-79
+24-->[com.google.firebase:firebase-database:20.0.6] C:\Users\wwwle\.gradle\caches\transforms-3\5899eb60012ca454c1bb26444357f4e3\transformed\jetified-firebase-database-20.0.6\AndroidManifest.xml:25:22-76
 25
 26    <permission
-26-->[androidx.core:core:1.9.0] C:\Users\EcksD\.gradle\caches\transforms-3\cded83b008f9d29e1959bb7a5bc237d1\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+26-->[androidx.core:core:1.9.0] C:\Users\wwwle\.gradle\caches\transforms-3\d9a7bda5b0a0d2fc08828ff145bfcb70\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
 27        android:name="com.example.sleep_tracker.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-27-->[androidx.core:core:1.9.0] C:\Users\EcksD\.gradle\caches\transforms-3\cded83b008f9d29e1959bb7a5bc237d1\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+27-->[androidx.core:core:1.9.0] C:\Users\wwwle\.gradle\caches\transforms-3\d9a7bda5b0a0d2fc08828ff145bfcb70\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
 28        android:protectionLevel="signature" />
-28-->[androidx.core:core:1.9.0] C:\Users\EcksD\.gradle\caches\transforms-3\cded83b008f9d29e1959bb7a5bc237d1\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+28-->[androidx.core:core:1.9.0] C:\Users\wwwle\.gradle\caches\transforms-3\d9a7bda5b0a0d2fc08828ff145bfcb70\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
 29
 30    <uses-permission android:name="com.example.sleep_tracker.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- for android -->
-30-->[androidx.core:core:1.9.0] C:\Users\EcksD\.gradle\caches\transforms-3\cded83b008f9d29e1959bb7a5bc237d1\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-30-->[androidx.core:core:1.9.0] C:\Users\EcksD\.gradle\caches\transforms-3\cded83b008f9d29e1959bb7a5bc237d1\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+30-->[androidx.core:core:1.9.0] C:\Users\wwwle\.gradle\caches\transforms-3\d9a7bda5b0a0d2fc08828ff145bfcb70\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+30-->[androidx.core:core:1.9.0] C:\Users\wwwle\.gradle\caches\transforms-3\d9a7bda5b0a0d2fc08828ff145bfcb70\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 31    <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/> -->
 32    <!-- <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/> -->
 33    <!-- <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> -->
 34    <!-- <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> -->
 35    <!-- for Samsung -->
 36    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
-36-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:19:5-86
-36-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:19:22-83
+36-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:19:5-86
+36-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:19:22-83
 37    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- for htc -->
-37-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:20:5-87
-37-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:20:22-84
+37-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:20:5-87
+37-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:20:22-84
 38    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
-38-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:23:5-81
-38-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:23:22-78
+38-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:23:5-81
+38-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:23:22-78
 39    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- for sony -->
-39-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:24:5-83
-39-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:24:22-80
+39-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:24:5-83
+39-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:24:22-80
 40    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
-40-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:27:5-88
-40-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:27:22-85
+40-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:27:5-88
+40-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:27:22-85
 41    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- for apex -->
-41-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:28:5-92
-41-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:28:22-89
+41-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:28:5-92
+41-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:28:22-89
 42    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- for solid -->
-42-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:31:5-84
-42-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:31:22-81
+42-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:31:5-84
+42-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:31:22-81
 43    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- for huawei -->
-43-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:34:5-83
-43-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:34:22-80
+43-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:34:5-83
+43-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:34:22-80
 44    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
-44-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:37:5-91
-44-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:37:22-88
+44-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:37:5-91
+44-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:37:22-88
 45    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
-45-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:38:5-92
-45-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:38:22-89
+45-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:38:5-92
+45-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:38:22-89
 46    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" /> <!-- for ZUK -->
-46-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:39:5-93
-46-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:39:22-90
+46-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:39:5-93
+46-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:39:22-90
 47    <uses-permission android:name="android.permission.READ_APP_BADGE" /> <!-- for OPPO -->
-47-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:42:5-73
-47-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:42:22-70
+47-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:42:5-73
+47-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:42:22-70
 48    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
-48-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:45:5-82
-48-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:45:22-79
+48-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:45:5-82
+48-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:45:22-79
 49    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" /> <!-- for EvMe -->
-49-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:46:5-83
-49-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:46:22-80
+49-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:46:5-83
+49-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:46:22-80
 50    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
-50-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:49:5-88
-50-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:49:22-85
+50-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:49:5-88
+50-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:49:22-85
 51    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
-51-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:50:5-89
-51-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\EcksD\.gradle\caches\transforms-3\7242dd21e231575c348f099f6df69b71\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:50:22-86
+51-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:50:5-89
+51-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\wwwle\.gradle\caches\transforms-3\3b4273e78162454268563f02e8908dbe\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:50:22-86
 52
 53    <application
 54        android:name="android.app.Application"
 55        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-55-->[androidx.core:core:1.9.0] C:\Users\EcksD\.gradle\caches\transforms-3\cded83b008f9d29e1959bb7a5bc237d1\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+55-->[androidx.core:core:1.9.0] C:\Users\wwwle\.gradle\caches\transforms-3\d9a7bda5b0a0d2fc08828ff145bfcb70\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 56        android:debuggable="true"
 57        android:icon="@mipmap/ic_launcher"
 58        android:label="sleep_tracker" >
@@ -143,235 +143,235 @@
 90            android:value="2" />
 91
 92        <service
-92-->[:firebase_database] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+92-->[:firebase_database] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
 93            android:name="com.google.firebase.components.ComponentDiscoveryService"
-93-->[:firebase_database] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
+93-->[:firebase_database] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
 94            android:directBootAware="true"
-94-->[com.google.firebase:firebase-common:20.1.2] C:\Users\EcksD\.gradle\caches\transforms-3\3addbaa02d367f33b06b4884fb7b7bf0\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:35:13-43
+94-->[com.google.firebase:firebase-common:20.1.2] C:\Users\wwwle\.gradle\caches\transforms-3\150cf6278642d0b512f52e2a6dd382e5\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:35:13-43
 95            android:exported="false" >
-95-->[com.google.firebase:firebase-database:20.0.6] C:\Users\EcksD\.gradle\caches\transforms-3\babd057b5e8ab13cf26dc75c516e2282\transformed\jetified-firebase-database-20.0.6\AndroidManifest.xml:31:13-37
+95-->[com.google.firebase:firebase-database:20.0.6] C:\Users\wwwle\.gradle\caches\transforms-3\5899eb60012ca454c1bb26444357f4e3\transformed\jetified-firebase-database-20.0.6\AndroidManifest.xml:31:13-37
 96            <meta-data
-96-->[:firebase_database] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+96-->[:firebase_database] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 97                android:name="com.google.firebase.components:io.flutter.plugins.firebase.database.FlutterFirebaseAppRegistrar"
-97-->[:firebase_database] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-127
+97-->[:firebase_database] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-127
 98                android:value="com.google.firebase.components.ComponentRegistrar" />
-98-->[:firebase_database] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+98-->[:firebase_database] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 99            <meta-data
-99-->[:firebase_core] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+99-->[:firebase_core] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 100                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-100-->[:firebase_core] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+100-->[:firebase_core] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 101                android:value="com.google.firebase.components.ComponentRegistrar" />
-101-->[:firebase_core] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+101-->[:firebase_core] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 102            <meta-data
-102-->[com.google.firebase:firebase-database:20.0.6] C:\Users\EcksD\.gradle\caches\transforms-3\babd057b5e8ab13cf26dc75c516e2282\transformed\jetified-firebase-database-20.0.6\AndroidManifest.xml:32:13-34:85
+102-->[com.google.firebase:firebase-database:20.0.6] C:\Users\wwwle\.gradle\caches\transforms-3\5899eb60012ca454c1bb26444357f4e3\transformed\jetified-firebase-database-20.0.6\AndroidManifest.xml:32:13-34:85
 103                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-103-->[com.google.firebase:firebase-database:20.0.6] C:\Users\EcksD\.gradle\caches\transforms-3\babd057b5e8ab13cf26dc75c516e2282\transformed\jetified-firebase-database-20.0.6\AndroidManifest.xml:33:17-109
+103-->[com.google.firebase:firebase-database:20.0.6] C:\Users\wwwle\.gradle\caches\transforms-3\5899eb60012ca454c1bb26444357f4e3\transformed\jetified-firebase-database-20.0.6\AndroidManifest.xml:33:17-109
 104                android:value="com.google.firebase.components.ComponentRegistrar" />
-104-->[com.google.firebase:firebase-database:20.0.6] C:\Users\EcksD\.gradle\caches\transforms-3\babd057b5e8ab13cf26dc75c516e2282\transformed\jetified-firebase-database-20.0.6\AndroidManifest.xml:34:17-82
+104-->[com.google.firebase:firebase-database:20.0.6] C:\Users\wwwle\.gradle\caches\transforms-3\5899eb60012ca454c1bb26444357f4e3\transformed\jetified-firebase-database-20.0.6\AndroidManifest.xml:34:17-82
 105        </service>
 106
 107        <receiver
-107-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:15:9-17:39
+107-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:15:9-17:39
 108            android:name="me.carda.awesome_notifications.DartNotificationActionReceiver"
-108-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-89
+108-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-89
 109            android:exported="true" />
-109-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-36
+109-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-36
 110        <receiver
-110-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-20:39
+110-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-20:39
 111            android:name="me.carda.awesome_notifications.DartDismissedNotificationReceiver"
-111-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-92
+111-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-92
 112            android:exported="true" />
-112-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-36
+112-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-36
 113        <receiver
-113-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:9-23:39
+113-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:9-23:39
 114            android:name="me.carda.awesome_notifications.DartScheduledNotificationReceiver"
-114-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-92
+114-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-92
 115            android:exported="true" />
-115-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-36
+115-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-36
 116        <receiver
-116-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:9-38:20
+116-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:9-38:20
 117            android:name="me.carda.awesome_notifications.DartRefreshSchedulesReceiver"
-117-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-87
+117-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-87
 118            android:enabled="true"
-118-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-35
+118-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-35
 119            android:exported="true" >
-119-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-36
+119-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-36
 120            <intent-filter>
-120-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:28:13-37:29
+120-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:28:13-37:29
 121                <category android:name="android.intent.category.DEFAULT" />
-121-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:29:17-76
-121-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:29:27-73
+121-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:29:17-76
+121-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:29:27-73
 122
 123                <action android:name="android.intent.action.BOOT_COMPLETED" />
-123-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:31:17-79
-123-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:31:25-76
+123-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:31:17-79
+123-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:31:25-76
 124                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
-124-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:32:17-86
-124-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:32:25-83
+124-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:32:17-86
+124-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:32:25-83
 125                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-125-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:33:17-84
-125-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:33:25-81
+125-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:33:17-84
+125-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:33:25-81
 126                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-126-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:34:17-82
-126-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:34:25-79
+126-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:34:17-82
+126-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:34:25-79
 127                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-127-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:35:17-82
-127-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:35:25-79
+127-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:35:17-82
+127-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:35:25-79
 128                <action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED" />
-128-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:36:17-107
-128-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:36:25-104
+128-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:36:17-107
+128-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:36:25-104
 129            </intent-filter>
 130        </receiver>
 131
 132        <service
-132-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:40:9-43:72
+132-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:40:9-43:72
 133            android:name="me.carda.awesome_notifications.DartBackgroundService"
-133-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:41:13-80
+133-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:41:13-80
 134            android:exported="false"
-134-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:42:13-37
+134-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:42:13-37
 135            android:permission="android.permission.BIND_JOB_SERVICE" />
-135-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:43:13-69
+135-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:43:13-69
 136        <service
-136-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:44:9-49:43
+136-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:44:9-49:43
 137            android:name="me.carda.awesome_notifications.core.services.ForegroundService"
-137-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:45:13-90
+137-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:45:13-90
 138            android:enabled="true"
-138-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:46:13-35
+138-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:46:13-35
 139            android:exported="false"
-139-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:47:13-37
+139-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:47:13-37
 140            android:foregroundServiceType="phoneCall"
-140-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:48:13-54
+140-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:48:13-54
 141            android:stopWithTask="true" />
-141-->[:awesome_notifications] C:\Users\EcksD\OneDrive\Desktop\SE\agile-architects\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:49:13-40
+141-->[:awesome_notifications] C:\Users\wwwle\Desktop\Classes\Year 3\Spring Semester\Software Engineering\1. Group Project\sleep_tracker\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:49:13-40
 142        <service
-142-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\EcksD\.gradle\caches\transforms-3\2803978167c60a1810b0fffd95324804\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:21:9-28:19
+142-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\wwwle\.gradle\caches\transforms-3\e17eb80c981d68237585a03759b8f487\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:21:9-28:19
 143            android:name="me.carda.awesome_notifications.core.managers.StatusBarManager"
-143-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\EcksD\.gradle\caches\transforms-3\2803978167c60a1810b0fffd95324804\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:22:13-89
+143-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\wwwle\.gradle\caches\transforms-3\e17eb80c981d68237585a03759b8f487\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:22:13-89
 144            android:exported="true"
-144-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\EcksD\.gradle\caches\transforms-3\2803978167c60a1810b0fffd95324804\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:23:13-36
+144-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\wwwle\.gradle\caches\transforms-3\e17eb80c981d68237585a03759b8f487\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:23:13-36
 145            android:label="My Notification Listener Service" >
-145-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\EcksD\.gradle\caches\transforms-3\2803978167c60a1810b0fffd95324804\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:24:13-61
+145-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\wwwle\.gradle\caches\transforms-3\e17eb80c981d68237585a03759b8f487\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:24:13-61
 146            <intent-filter>
-146-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\EcksD\.gradle\caches\transforms-3\2803978167c60a1810b0fffd95324804\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:25:13-27:29
+146-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\wwwle\.gradle\caches\transforms-3\e17eb80c981d68237585a03759b8f487\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:25:13-27:29
 147                <action android:name="android.service.notification.NotificationListenerService" />
-147-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\EcksD\.gradle\caches\transforms-3\2803978167c60a1810b0fffd95324804\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:26:17-99
-147-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\EcksD\.gradle\caches\transforms-3\2803978167c60a1810b0fffd95324804\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:26:25-96
+147-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\wwwle\.gradle\caches\transforms-3\e17eb80c981d68237585a03759b8f487\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:26:17-99
+147-->[me.carda:AndroidAwnCore:0.9.3] C:\Users\wwwle\.gradle\caches\transforms-3\e17eb80c981d68237585a03759b8f487\transformed\jetified-AndroidAwnCore-0.9.3\AndroidManifest.xml:26:25-96
 148            </intent-filter>
 149        </service>
 150        <service
-150-->[androidx.room:room-runtime:2.5.0] C:\Users\EcksD\.gradle\caches\transforms-3\f1bd45ea7c66f36c383de27ba80b6609\transformed\room-runtime-2.5.0\AndroidManifest.xml:24:9-28:63
+150-->[androidx.room:room-runtime:2.5.0] C:\Users\wwwle\.gradle\caches\transforms-3\923f551851d4d186a7ae64850e2abec2\transformed\room-runtime-2.5.0\AndroidManifest.xml:24:9-28:63
 151            android:name="androidx.room.MultiInstanceInvalidationService"
-151-->[androidx.room:room-runtime:2.5.0] C:\Users\EcksD\.gradle\caches\transforms-3\f1bd45ea7c66f36c383de27ba80b6609\transformed\room-runtime-2.5.0\AndroidManifest.xml:25:13-74
+151-->[androidx.room:room-runtime:2.5.0] C:\Users\wwwle\.gradle\caches\transforms-3\923f551851d4d186a7ae64850e2abec2\transformed\room-runtime-2.5.0\AndroidManifest.xml:25:13-74
 152            android:directBootAware="true"
-152-->[androidx.room:room-runtime:2.5.0] C:\Users\EcksD\.gradle\caches\transforms-3\f1bd45ea7c66f36c383de27ba80b6609\transformed\room-runtime-2.5.0\AndroidManifest.xml:26:13-43
+152-->[androidx.room:room-runtime:2.5.0] C:\Users\wwwle\.gradle\caches\transforms-3\923f551851d4d186a7ae64850e2abec2\transformed\room-runtime-2.5.0\AndroidManifest.xml:26:13-43
 153            android:exported="false" />
-153-->[androidx.room:room-runtime:2.5.0] C:\Users\EcksD\.gradle\caches\transforms-3\f1bd45ea7c66f36c383de27ba80b6609\transformed\room-runtime-2.5.0\AndroidManifest.xml:27:13-37
+153-->[androidx.room:room-runtime:2.5.0] C:\Users\wwwle\.gradle\caches\transforms-3\923f551851d4d186a7ae64850e2abec2\transformed\room-runtime-2.5.0\AndroidManifest.xml:27:13-37
 154
 155        <uses-library
-155-->[androidx.window:window:1.0.0-beta04] C:\Users\EcksD\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+155-->[androidx.window:window:1.0.0-beta04] C:\Users\wwwle\.gradle\caches\transforms-3\076eb9235982ee06112d76594ea8585f\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
 156            android:name="androidx.window.extensions"
-156-->[androidx.window:window:1.0.0-beta04] C:\Users\EcksD\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+156-->[androidx.window:window:1.0.0-beta04] C:\Users\wwwle\.gradle\caches\transforms-3\076eb9235982ee06112d76594ea8585f\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
 157            android:required="false" />
-157-->[androidx.window:window:1.0.0-beta04] C:\Users\EcksD\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+157-->[androidx.window:window:1.0.0-beta04] C:\Users\wwwle\.gradle\caches\transforms-3\076eb9235982ee06112d76594ea8585f\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
 158        <uses-library
-158-->[androidx.window:window:1.0.0-beta04] C:\Users\EcksD\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+158-->[androidx.window:window:1.0.0-beta04] C:\Users\wwwle\.gradle\caches\transforms-3\076eb9235982ee06112d76594ea8585f\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
 159            android:name="androidx.window.sidecar"
-159-->[androidx.window:window:1.0.0-beta04] C:\Users\EcksD\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+159-->[androidx.window:window:1.0.0-beta04] C:\Users\wwwle\.gradle\caches\transforms-3\076eb9235982ee06112d76594ea8585f\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
 160            android:required="false" />
-160-->[androidx.window:window:1.0.0-beta04] C:\Users\EcksD\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+160-->[androidx.window:window:1.0.0-beta04] C:\Users\wwwle\.gradle\caches\transforms-3\076eb9235982ee06112d76594ea8585f\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
 161
 162        <provider
-162-->[com.google.firebase:firebase-common:20.1.2] C:\Users\EcksD\.gradle\caches\transforms-3\3addbaa02d367f33b06b4884fb7b7bf0\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:26:9-31:39
+162-->[com.google.firebase:firebase-common:20.1.2] C:\Users\wwwle\.gradle\caches\transforms-3\150cf6278642d0b512f52e2a6dd382e5\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:26:9-31:39
 163            android:name="com.google.firebase.provider.FirebaseInitProvider"
-163-->[com.google.firebase:firebase-common:20.1.2] C:\Users\EcksD\.gradle\caches\transforms-3\3addbaa02d367f33b06b4884fb7b7bf0\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:27:13-77
+163-->[com.google.firebase:firebase-common:20.1.2] C:\Users\wwwle\.gradle\caches\transforms-3\150cf6278642d0b512f52e2a6dd382e5\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:27:13-77
 164            android:authorities="com.example.sleep_tracker.firebaseinitprovider"
-164-->[com.google.firebase:firebase-common:20.1.2] C:\Users\EcksD\.gradle\caches\transforms-3\3addbaa02d367f33b06b4884fb7b7bf0\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:28:13-72
+164-->[com.google.firebase:firebase-common:20.1.2] C:\Users\wwwle\.gradle\caches\transforms-3\150cf6278642d0b512f52e2a6dd382e5\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:28:13-72
 165            android:directBootAware="true"
-165-->[com.google.firebase:firebase-common:20.1.2] C:\Users\EcksD\.gradle\caches\transforms-3\3addbaa02d367f33b06b4884fb7b7bf0\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:29:13-43
+165-->[com.google.firebase:firebase-common:20.1.2] C:\Users\wwwle\.gradle\caches\transforms-3\150cf6278642d0b512f52e2a6dd382e5\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:29:13-43
 166            android:exported="false"
-166-->[com.google.firebase:firebase-common:20.1.2] C:\Users\EcksD\.gradle\caches\transforms-3\3addbaa02d367f33b06b4884fb7b7bf0\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:30:13-37
+166-->[com.google.firebase:firebase-common:20.1.2] C:\Users\wwwle\.gradle\caches\transforms-3\150cf6278642d0b512f52e2a6dd382e5\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:30:13-37
 167            android:initOrder="100" />
-167-->[com.google.firebase:firebase-common:20.1.2] C:\Users\EcksD\.gradle\caches\transforms-3\3addbaa02d367f33b06b4884fb7b7bf0\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:31:13-36
+167-->[com.google.firebase:firebase-common:20.1.2] C:\Users\wwwle\.gradle\caches\transforms-3\150cf6278642d0b512f52e2a6dd382e5\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:31:13-36
 168
 169        <activity
-169-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\EcksD\.gradle\caches\transforms-3\da836af96063471d9ecc25668dfd26c9\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+169-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\wwwle\.gradle\caches\transforms-3\680a2964d8a0bce7cbd43c0f88e0420c\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
 170            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-170-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\EcksD\.gradle\caches\transforms-3\da836af96063471d9ecc25668dfd26c9\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+170-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\wwwle\.gradle\caches\transforms-3\680a2964d8a0bce7cbd43c0f88e0420c\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
 171            android:exported="false"
-171-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\EcksD\.gradle\caches\transforms-3\da836af96063471d9ecc25668dfd26c9\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+171-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\wwwle\.gradle\caches\transforms-3\680a2964d8a0bce7cbd43c0f88e0420c\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
 172            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-172-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\EcksD\.gradle\caches\transforms-3\da836af96063471d9ecc25668dfd26c9\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+172-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\wwwle\.gradle\caches\transforms-3\680a2964d8a0bce7cbd43c0f88e0420c\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
 173
 174        <meta-data
-174-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\EcksD\.gradle\caches\transforms-3\812b774e80ed6f3274e67e516e447223\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+174-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\wwwle\.gradle\caches\transforms-3\55b4e390742817dc4b9653e42d791034\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
 175            android:name="com.google.android.gms.version"
-175-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\EcksD\.gradle\caches\transforms-3\812b774e80ed6f3274e67e516e447223\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+175-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\wwwle\.gradle\caches\transforms-3\55b4e390742817dc4b9653e42d791034\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
 176            android:value="@integer/google_play_services_version" />
-176-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\EcksD\.gradle\caches\transforms-3\812b774e80ed6f3274e67e516e447223\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+176-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\wwwle\.gradle\caches\transforms-3\55b4e390742817dc4b9653e42d791034\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
 177
 178        <provider
-178-->[androidx.emoji2:emoji2:1.2.0] C:\Users\EcksD\.gradle\caches\transforms-3\23dc147f23d22b71f574c5ae9f87d8c7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+178-->[androidx.emoji2:emoji2:1.2.0] C:\Users\wwwle\.gradle\caches\transforms-3\a069e44d9c98fbecf8e5475010c3a44b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 179            android:name="androidx.startup.InitializationProvider"
-179-->[androidx.emoji2:emoji2:1.2.0] C:\Users\EcksD\.gradle\caches\transforms-3\23dc147f23d22b71f574c5ae9f87d8c7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+179-->[androidx.emoji2:emoji2:1.2.0] C:\Users\wwwle\.gradle\caches\transforms-3\a069e44d9c98fbecf8e5475010c3a44b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
 180            android:authorities="com.example.sleep_tracker.androidx-startup"
-180-->[androidx.emoji2:emoji2:1.2.0] C:\Users\EcksD\.gradle\caches\transforms-3\23dc147f23d22b71f574c5ae9f87d8c7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+180-->[androidx.emoji2:emoji2:1.2.0] C:\Users\wwwle\.gradle\caches\transforms-3\a069e44d9c98fbecf8e5475010c3a44b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
 181            android:exported="false" >
-181-->[androidx.emoji2:emoji2:1.2.0] C:\Users\EcksD\.gradle\caches\transforms-3\23dc147f23d22b71f574c5ae9f87d8c7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+181-->[androidx.emoji2:emoji2:1.2.0] C:\Users\wwwle\.gradle\caches\transforms-3\a069e44d9c98fbecf8e5475010c3a44b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
 182            <meta-data
-182-->[androidx.emoji2:emoji2:1.2.0] C:\Users\EcksD\.gradle\caches\transforms-3\23dc147f23d22b71f574c5ae9f87d8c7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+182-->[androidx.emoji2:emoji2:1.2.0] C:\Users\wwwle\.gradle\caches\transforms-3\a069e44d9c98fbecf8e5475010c3a44b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
 183                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-183-->[androidx.emoji2:emoji2:1.2.0] C:\Users\EcksD\.gradle\caches\transforms-3\23dc147f23d22b71f574c5ae9f87d8c7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+183-->[androidx.emoji2:emoji2:1.2.0] C:\Users\wwwle\.gradle\caches\transforms-3\a069e44d9c98fbecf8e5475010c3a44b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
 184                android:value="androidx.startup" />
-184-->[androidx.emoji2:emoji2:1.2.0] C:\Users\EcksD\.gradle\caches\transforms-3\23dc147f23d22b71f574c5ae9f87d8c7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+184-->[androidx.emoji2:emoji2:1.2.0] C:\Users\wwwle\.gradle\caches\transforms-3\a069e44d9c98fbecf8e5475010c3a44b\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
 185            <meta-data
-185-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\EcksD\.gradle\caches\transforms-3\6e295704a2b30a70d5c97fe20a323521\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+185-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\wwwle\.gradle\caches\transforms-3\21dd80ff2c792d22d155eb6f4656712d\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
 186                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-186-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\EcksD\.gradle\caches\transforms-3\6e295704a2b30a70d5c97fe20a323521\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+186-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\wwwle\.gradle\caches\transforms-3\21dd80ff2c792d22d155eb6f4656712d\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
 187                android:value="androidx.startup" />
-187-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\EcksD\.gradle\caches\transforms-3\6e295704a2b30a70d5c97fe20a323521\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+187-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\wwwle\.gradle\caches\transforms-3\21dd80ff2c792d22d155eb6f4656712d\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
 188            <meta-data
-188-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+188-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
 189                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-189-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+189-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
 190                android:value="androidx.startup" />
-190-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+190-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
 191        </provider>
 192
 193        <receiver
-193-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+193-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
 194            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-194-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+194-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
 195            android:directBootAware="false"
-195-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+195-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
 196            android:enabled="true"
-196-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+196-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
 197            android:exported="true"
-197-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+197-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
 198            android:permission="android.permission.DUMP" >
-198-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+198-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
 199            <intent-filter>
-199-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+199-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
 200                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-200-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-200-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+200-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+200-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
 201            </intent-filter>
 202            <intent-filter>
-202-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+202-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
 203                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-203-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-203-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+203-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+203-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
 204            </intent-filter>
 205            <intent-filter>
-205-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+205-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
 206                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-206-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-206-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+206-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+206-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
 207            </intent-filter>
 208            <intent-filter>
-208-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+208-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
 209                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-209-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-209-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\EcksD\.gradle\caches\transforms-3\d8b20124984237c0e54cf00d7c7f47a6\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+209-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+209-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\wwwle\.gradle\caches\transforms-3\b92cbf7d134b1c7f58467c023b6e5f48\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
 210            </intent-filter>
 211        </receiver>
 212    </application>
