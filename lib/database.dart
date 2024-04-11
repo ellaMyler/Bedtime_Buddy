@@ -17,32 +17,79 @@ void sendMessage(String message) async {
 
 }
 
-void readData() async { // Test function
+void readData() { // Follow this format for other functions
   final ref = FirebaseDatabase.instance.ref();
-  final snapshot = await ref.child('April 3, 2024/Hours slept').get();
-  if (snapshot.exists){
-    print(snapshot.value);
-  } else {
-    print('No data available');
+
+  // Get the snapshot asynchronously
+  ref.child('April 4, 2024/Hours slept').get().then((snapshot) {
+    // Check if data exists
+    if (snapshot.exists) {
+      // Data exists, print the value
+      print(snapshot.value);
+    } else {
+      // Data doesn't exist
+      print('No data available');
+    }
+  }).catchError((error) {
+    // Handle any errors that occur during the database operation
+    print("Error: $error");
+  });
+}
+
+Future<String> getSleepTime(String date) async{
+  final ref = FirebaseDatabase.instance.ref();
+  final hours = await ref.child(date + "/Hours slept").get();
+  final minutes = await ref.child(date + "/Minutes slept").get();
+
+  if(await hasDate(date)) {
+    print(hours.value.toString() + ":" + minutes.value.toString());
+    return hours.value.toString() + ":" + minutes.value.toString();
+  }else{
+    return "No values";
   }
 }
 
-Future<Object?> getSleepHours(String date) async{
+Future<String> getSleepHours(String date) async{
   final ref = FirebaseDatabase.instance.ref();
   final hours = await ref.child(date + "/Hours slept").get();
 
   if(await hasDate(date)) {
-    return hours.value;
+    return hours.value.toString();
+  }else{
+    return "No values";
   }
-
 }
 
-Future<int> getSleepMinutes(String date) async{
+Future<String> getSleepMinutes(String date) async{
   final ref = FirebaseDatabase.instance.ref();
   final minutes = await ref.child(date + "/Minutes slept").get();
 
-  return 0;
+  if(await hasDate(date)) {
+    return minutes.value.toString();
+  }else{
+    return "No values";
+  }
 }
+
+Future<int> timeToInt(Future<String> time){
+  return time.then((String stringValue) {
+    // Parse the string to int
+    int intValue = int.parse(stringValue);
+    if (intValue != null) {
+      print (intValue);
+      return intValue; // Return the integer value
+    } else {
+      throw FormatException('Could not parse string to integer');
+    }
+  });
+}
+
+int sleepTimeInMinutes(int hours, int minutes){
+  int total = (hours * 60) + minutes;
+  return total;
+}
+
+
 
 Future<bool> hasDate(String date) async {
   final ref = FirebaseDatabase.instance.ref();
@@ -54,3 +101,5 @@ Future<bool> hasDate(String date) async {
     return false;
   }
 }
+
+
