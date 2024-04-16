@@ -39,7 +39,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sleep Tracker'),
+        title: const Text('Bedtime Buddy'),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),

@@ -30,7 +30,7 @@ class _BedtimePageState extends State<BedtimePage> {
             child: Padding(
               padding: EdgeInsets.only(top: 40.0),
               child: Text(
-                  '!Recommended sleep time is 8 hours!',
+                  'Doctor recommended to sleep 7-8 hours',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
