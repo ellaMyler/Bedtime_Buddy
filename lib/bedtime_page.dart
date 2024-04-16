@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sleep_tracker/database.dart';
 import 'notification_maker.dart';
+import 'alarm_setter.dart';
 
 class BedtimePage extends StatefulWidget {
   const BedtimePage({Key? key}) : super(key: key);
@@ -49,20 +50,15 @@ class _BedtimePageState extends State<BedtimePage> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    _selectTime(true);
-                    _showConfirmationDialog();
-                    sendBedtime('Bedtime', bedtimeDay.toString(), bedtime.toString());
-                    sendBedtime('WakeupTime', wakeupTimeDay.toString(), wakeupTime.toString());
-                    //Notification Code
-                    final bedtimeDateTime = DateTime(
-                      bedtimeDay!.year,
-                      bedtimeDay!.month,
-                      bedtimeDay!.day,
-                      bedtime!.hour,
-                      bedtime!.minute,
-                    );
-                    NotificationService.sendBedtimeNotification(bedtimeDateTime);
-                    //End of Notification Code
+                    _selectTime(true).then((_) {
+                      if (bedtime != null && bedtimeDay != null) {
+                        _showConfirmationDialog();
+                        sendBedtime('Bedtime', bedtimeDay.toString(), bedtime.toString());
+                        sendBedtime('WakeupTime', wakeupTimeDay.toString(), wakeupTime.toString());
+                      } else {
+                        // Needs an error if the time was NOT selected?
+                      }
+                    });
                   },
                   child: const Text('Set Bedtime'),
                 ),
@@ -98,6 +94,24 @@ class _BedtimePageState extends State<BedtimePage> {
                               bedtimeDay.toString(), bedtime.toString());
                           sendBedtime('WakeupTime',
                               wakeupTimeDay.toString(), wakeupTime.toString());
+                          //Notification Code
+                          final bedtimeDateTime = DateTime(
+                            bedtimeDay!.year,
+                            bedtimeDay!.month,
+                            bedtimeDay!.day,
+                            bedtime!.hour,
+                            bedtime!.minute,
+                          );
+                          NotificationService.sendBedtimeNotification(bedtimeDateTime);
+                          //End of Notification Code
+                          //Alarm Code
+                          final wakeupDateTime = DateTime(
+                            wakeupTimeDay!.year,
+                            wakeupTimeDay!.month,
+                            wakeupTimeDay!.day,
+                          );
+                          AlarmSetter.setWakeupAlarm(wakeupTimeDay, wakeupTime);
+                          //End of Alarm Code
                       },
                       child: const Text('Confirm'),
                     ),
@@ -169,8 +183,10 @@ class _BedtimePageState extends State<BedtimePage> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}'),
-              Text('Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}'),
+              Text('Bedtime: ${bedtime != null && bedtimeDay != null ? "${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}" : "Not set"}'),
+              Text('Wakeup Time: ${wakeupTime != null && wakeupTimeDay != null ? "${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}" : "Not set"}')
+              //Text('Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}'),
+              //Text('Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}'),
             ],
           ),
           actions: <Widget>[

@@ -38,7 +38,7 @@ class NotificationService {
     // Ensure that initNotifications() has been called before creating notifications
     AwesomeNotifications().createNotification(
       content: NotificationContent(
-        id: 1,
+        id: DateTime.now().millisecondsSinceEpoch % 10000,
         channelKey: 'local_channel',
         title: "Test Notification",
         body: "This notification works!",
@@ -60,7 +60,7 @@ class NotificationService {
       ),
       content: NotificationContent(
        // id: DateTime.now().millisecondsSinceEpoch.remainder(100000), // Ensures a unique ID for the notification
-        id: 2,
+        id: DateTime.now().millisecondsSinceEpoch % 10000,
         channelKey: 'local_channel',
         title: 'Time for Bed!',
         body: "It is time for you to go to bed",

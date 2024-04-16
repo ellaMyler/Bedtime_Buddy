@@ -3,6 +3,7 @@ import 'package:app_settings/app_settings.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'notification_controller.dart';
 import 'notification_maker.dart';
+import 'alarm_page.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -27,6 +28,15 @@ class SettingsPage extends StatelessWidget {
                 AppSettings.openAppSettings();
               },
               child: const Text('Open App Settings'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ExampleAlarmHomeScreen()),
+                );
+              },
+              child: const Text('Edit Alarms'),
             ),
           ],
         ),

@@ -5,13 +5,15 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'notification_maker.dart';
+import 'package:alarm/alarm.dart';
 
 
 // The main file accesses MainScreen class from app_ui.dart to generate the app.
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  await NotificationService.initNotifications();
+  await NotificationService.initNotifications(); // Starts Notifications
+  await Alarm.init(); // Starts Alarms
 
   runApp(const SleepTrackerApp());
 }
