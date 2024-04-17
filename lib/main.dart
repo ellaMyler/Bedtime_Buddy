@@ -15,6 +15,24 @@ void main() async {
   await NotificationService.initNotifications(); // Starts Notifications
   await Alarm.init(); // Starts Alarms
 
+  //Notification Initialization Code
+  AwesomeNotifications().initialize(
+      null, //Icon; null defaults to app icon
+      [
+        NotificationChannel(
+            channelGroupKey: 'basic_channel_group',
+            channelKey: 'local_channel',
+            channelName: 'Basic Notification',
+            channelDescription: 'Notification channel for basic notifications',
+            importance: NotificationImportance.High,
+            defaultColor: Color(0xFF9D50DD),
+            ledColor: Colors.white
+        )
+      ],
+      debug: true
+  );
+  //End of Notification Initialization Code
+
   runApp(const SleepTrackerApp());
 }
 

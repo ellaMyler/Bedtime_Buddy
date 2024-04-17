@@ -4,6 +4,7 @@ import 'bedtime_page.dart';
 
 class NotificationService {
   static Future<void> initNotifications() async {
+    /*
     await AwesomeNotifications().initialize(
       null, // This null is for the notification icon
       [
@@ -18,6 +19,8 @@ class NotificationService {
         NotificationChannelGroup(channelGroupKey: "basic_channel_group", channelGroupName: "Basic Group")
       ],
     );
+
+     */
 
     // Check if notifications are allowed, if not, request permission
     bool isAllowedToSendNotification = await AwesomeNotifications().isNotificationAllowed();
@@ -47,16 +50,16 @@ class NotificationService {
   }
 
   static Future<void> sendBedtimeNotification(DateTime bedtimeDateTime) async {
-    String localTimeZone = await AwesomeNotifications().getLocalTimeZoneIdentifier();
-    String utcTimeZone = await AwesomeNotifications().getLocalTimeZoneIdentifier();
-    print("Scheduling bedtime notification for: $bedtimeDateTime");
+   // String localTimeZone = await AwesomeNotifications().getLocalTimeZoneIdentifier();
+    //String utcTimeZone = await AwesomeNotifications().getLocalTimeZoneIdentifier();
+   // print("Scheduling bedtime notification for: $bedtimeDateTime");
     await AwesomeNotifications().createNotification(
       schedule: NotificationCalendar(
-        day: bedtimeDateTime.day,
-        month: bedtimeDateTime.month,
-        year: bedtimeDateTime.year,
-        hour: bedtimeDateTime.hour,
-        minute: bedtimeDateTime.minute,
+        day: bedtimeDateTime!.day,
+        month: bedtimeDateTime!.month,
+        year: bedtimeDateTime!.year,
+        hour: bedtimeDateTime!.hour,
+        minute: bedtimeDateTime!.minute,
       ),
       content: NotificationContent(
        // id: DateTime.now().millisecondsSinceEpoch.remainder(100000), // Ensures a unique ID for the notification
@@ -68,10 +71,3 @@ class NotificationService {
     );
   }
 }
-
-/*wakeUpScreen: true,
-        category: NotificationCategory.Reminder,
-        notificationLayout: NotificationLayout.BigPicture,
-        bigPicture: 'asset://assets/images/delivery.jpeg',
-        payload: {'uuid': 'uuid-test'},
-        autoDismissible: false, */
