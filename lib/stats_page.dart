@@ -242,19 +242,19 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
     String text;
     switch (value.toInt()) {
       case 2:
-        text = '2 hours';
+        text = '2';
         break;
       case 4:
-        text = '4 hours';
+        text = '4';
         break;
       case 6:
-        text = '6 hours';
+        text = '6';
         break;
       case 8:
-        text = '8 hours';
+        text = '8';
         break;
       case 10:
-        text = '10 hours';
+        text = '10';
         break;
       default:
         return Container();
