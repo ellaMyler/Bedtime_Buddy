@@ -64,6 +64,7 @@ flutter:
   assets:
     - images/ohshitnoway.jpg
     - images/agile_sunny_background.png
+    - images/agile_moonlit_background.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
