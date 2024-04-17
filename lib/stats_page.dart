@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:firebase_database/firebase_database.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 //Stats Page
@@ -26,7 +26,7 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Center(child:
-                Text('(to be made in future sprint)', style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal)),
+                Text('Stats', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               ),
               SizedBox(height: 15),
               Container(
@@ -35,8 +35,62 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
                 decoration: BoxDecoration(
                   border: Border.all(color:Colors.black),
                 ),
-                child: Text('(graph of weekly sleep stats, with amount of sleep shown)', style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal) ),
-              ),
+                child: LineChart(
+                  LineChartData(
+                    lineTouchData: LineTouchData(enabled: true),
+                    lineBarsData: [
+                      LineChartBarData(
+                        spots: [
+                          FlSpot(1, 3),
+                          FlSpot(3, 6),
+                          FlSpot(4, 8),
+                          FlSpot(5, 4),
+                          FlSpot(6, 7),
+                          FlSpot(7, 9),
+                        ],
+                        isCurved: true,
+                        barWidth: 8,
+                      ),
+                    ],
+                    minY: 0,
+                    titlesData: FlTitlesData (
+                      show: true,
+                      topTitles: const AxisTitles(
+                        sideTitles: SideTitles(showTitles: false),
+                      ),
+                      rightTitles: const AxisTitles(
+                        sideTitles: SideTitles(showTitles: false),
+                      ),
+                      bottomTitles: AxisTitles(
+                        axisNameWidget: Text('Day',
+                          style: TextStyle(fontSize: 10, color: Colors.black),),
+                        sideTitles: SideTitles(
+                          showTitles: true,
+                          reservedSize: 18,
+                          interval: 1,
+                          getTitlesWidget: bottomTitleWidgets,
+                        ),
+                      ),
+                      leftTitles: AxisTitles(
+                        axisNameSize: 20,
+                        axisNameWidget: const Text(
+                          'Hours', style: TextStyle(color: Colors.black),),
+                        sideTitles: SideTitles (
+                          showTitles: true, interval: 1, reservedSize: 40, getTitlesWidget: leftTitleWidgets,
+                        ),
+                      ),
+                    ),
+                    borderData: FlBorderData (
+                      show: true, border: Border.all (color: Colors.black),
+                    ),
+                    gridData: FlGridData(
+                      show: true,
+                      drawVerticalLine: true,
+                      horizontalInterval: 1,
+                        ),
+                      ),
+                    ),
+                  ),
               SizedBox(height: 20),
                 Text('Goals', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               SizedBox(height: 15),
@@ -57,6 +111,12 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
                                 children: [
                                   ListTile(
                                     title: Text(goals[index], style: TextStyle(fontWeight: FontWeight.bold)),
+                                    trailing: IconButton(
+                                      icon: Icon(Icons.delete),
+                                      onPressed: () {
+                                        confirmDelete(index);
+                                      },
+                                    ),
                                   ),
                                   Row(
                                     children: List.generate(7, (index) => Checkbox(
@@ -110,7 +170,7 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
                 ),
                 child: Column (
                   children:  [
-                    Text('On Average, you slept ___ hours this week',
+                    Text('On Average, you slept _____ hours this week',
                         style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)
                     ),
                     Text('On Average, your stress level was __ this week',
@@ -126,13 +186,115 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
                 onPressed: () {
                   readData();
                 },
-                child: Text('Test'),
+                child: Text('Get Data'),
               ),
-            ]
-          ),
-        )
+      ]
+        )));
+  }
+
+  Widget bottomTitleWidgets(double value, TitleMeta meta) {
+   String text;
+    switch (value.toInt()) {
+      case 1:
+        text = 'Sun';
+        break;
+      case 2:
+        text = 'Mon';
+        break;
+      case 3:
+        text = 'Tue';
+        break;
+      case 4:
+        text = 'Wed';
+        break;
+      case 5:
+        text = 'Thur';
+        break;
+      case 6:
+        text = 'Fri';
+        break;
+      case 7:
+        text = 'Sat';
+        break;
+      default:
+        return Container();
+    }
+
+    return SideTitleWidget(
+      axisSide: meta.axisSide,
+      space: 4,
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 10,
+          color: Colors.black,
+          fontWeight: FontWeight.normal,
+        ),
+      )
     );
   }
+
+  Widget leftTitleWidgets(double value, TitleMeta meta) {
+    const style = TextStyle(
+      fontWeight: FontWeight.normal,
+      fontSize: 12,
+    );
+    String text;
+    switch (value.toInt()) {
+      case 2:
+        text = '2 hours';
+        break;
+      case 4:
+        text = '4 hours';
+        break;
+      case 6:
+        text = '6 hours';
+        break;
+      case 8:
+        text = '8 hours';
+        break;
+      case 10:
+        text = '10 hours';
+        break;
+      default:
+        return Container();
+    }
+    return Text(text, style: style, textAlign: TextAlign.left);
+  }
+
+  void deleteGoal(int index) {
+    setState(() {
+      goals.removeAt(index);
+    });
+  }
+
+  void confirmDelete (int index) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text ('Delete Goal'),
+        content: Text ('Are you sure you want to delete this goal?'),
+        actions: [
+          TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text ('Cancel'),
+          ),
+          TextButton(
+              onPressed: () {
+                deleteGoal(index);
+                Navigator.of(context).pop();
+              },
+              child: Text('Delete'),
+          )
+        ],
+      );
+    },
+    );
+  }
+
    void readData() async {
      final ref = FirebaseDatabase.instance.ref();
      final snapshot = await ref.child('-NtXYmtubEemw7cEQFNI/message').get();
