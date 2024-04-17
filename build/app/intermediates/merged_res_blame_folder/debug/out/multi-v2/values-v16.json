@@ -4,7 +4,7 @@
             "outputFile": "com.example.sleep_tracker.app-mergeDebugResources-45:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\wwwle\\.gradle\\caches\\transforms-3\\e284401544ba482b40b90025405636f0\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\EcksD\\.gradle\\caches\\transforms-3\\e10778af844ce70e36fd9eb6ecad723a\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\wwwle\\.gradle\\caches\\transforms-3\\d9a7bda5b0a0d2fc08828ff145bfcb70\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\EcksD\\.gradle\\caches\\transforms-3\\cded83b008f9d29e1959bb7a5bc237d1\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -242,6 +242,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "pie_chart",
+      "rootUri": "file:///C:/Users/EcksD/AppData/Local/Pub/Cache/hosted/pub.dev/pie_chart-5.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "plugin_platform_interface",
       "rootUri": "file:///C:/Users/EcksD/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.8",
       "packageUri": "lib/",
@@ -338,7 +344,7 @@
       "languageVersion": "3.2"
     }
   ],
-  "generated": "2024-04-11T19:57:46.276123Z",
+  "generated": "2024-04-17T22:05:22.217037Z",
   "generator": "pub",
   "generatorVersion": "3.3.0"
 }
