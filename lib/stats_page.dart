@@ -50,8 +50,7 @@ class SleepStatsPage extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                readData();
-                //getSleepTime("April 4, 2024");
+                getSleepTime("April 4, 2024");
               },
               child: Text('Test'),
             ),
