@@ -18,7 +18,7 @@ void sendMessage(String message) async {
 
 }
 
-void readData() { // Follow this format for other functions
+void readData() { // Test function 
   final ref = FirebaseDatabase.instance.ref();
 
   // Get the snapshot asynchronously
@@ -37,67 +37,57 @@ void readData() { // Follow this format for other functions
   });
 }
 
-int getSleepTime(String date) {
-
-  int hours = getSleepHours(date);
-  int minutes = getSleepMinutes(date);
-
+Future<int> getSleepTime(String date) async {
+  int hours = await getSleepHours(date);
+  int minutes = await getSleepMinutes(date);
   int intTime = sleepTimeInMinutes(hours, minutes);
 
-  print(hours);
-  print(minutes);
-  print(intTime);
-  return(1);
+  print("Hours: $hours");
+  print("Minutes: $minutes");
+  print("Total Sleep Time in Minutes: $intTime");
 
+  return intTime;
 }
 
-int getSleepHours(String date) {
+Future<int> getSleepHours(String date) async {
   final hours = FirebaseDatabase.instance.ref();
-  // Get the snapshot asynchronously
-  hours.child(date + "/Hours slept").get().then((snapshot) {
-    // Check if data exists
+  int time = 0;
+  try {
+    DataSnapshot snapshot = await hours.child(date + "/Hours slept").get();
     if (snapshot.exists) {
-      // Data exists, print the value
-      //print(snapshot.value);
-      return(int.parse(snapshot.value.toString()));
+      time = int.parse(snapshot.value.toString());
+      return time;
     } else {
-      // Data doesn't exist
-      print('No data available');
-      return(-1);
+      print('No data available for hours slept on $date');
+      return -1;
     }
-  }).catchError((error) {
-    // Handle any errors that occur during the database operation
+  } catch (error) {
     print("Error: $error");
-  });
-
-  return(-2);
+    return -1;
+  }
 }
 
-int getSleepMinutes(String date) {
+Future<int> getSleepMinutes(String date) async {
   final minutes = FirebaseDatabase.instance.ref();
-  // Get the snapshot asynchronously
-  minutes.child(date + "/Minutes slept").get().then((snapshot) {
-    // Check if data exists
+  int time = 0;
+  try {
+    DataSnapshot snapshot = await minutes.child(date + "/Minutes slept").get();
     if (snapshot.exists) {
-      // Data exists, print the value
-      //print(snapshot.value);
-      return(int.parse(snapshot.value.toString()));
+      time = int.parse(snapshot.value.toString());
+      return time;
     } else {
-      // Data doesn't exist
-      print('No data available');
-      return(-1);
+      print('No data available for minutes slept on $date');
+      return -1;
     }
-  }).catchError((error) {
-    // Handle any errors that occur during the database operation
+  } catch (error) {
     print("Error: $error");
-  });
-
-  return(-2);
+    return -1;
+  }
 }
 
-int sleepTimeInMinutes(int hours, int minutes){
-  int total = (hours * 60) + minutes;
-  return total;
+int sleepTimeInMinutes(int hours, int minutes) {
+  return (hours * 60) + minutes;
 }
+
 
 
