@@ -42,7 +42,7 @@ class _MainScreenState extends State<MainScreen> {
         style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
 
       ),
-        backgroundColor: Colors.green,
+        backgroundColor: Color.fromRGBO(9, 7, 61, 1),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -52,7 +52,7 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Bedtime',
-            backgroundColor: Colors.green,
+            backgroundColor: Color.fromRGBO(9, 7, 61, 1),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bedtime),
@@ -68,7 +68,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black,
+        selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
 
         onTap: _onItemTapped,
