@@ -42,6 +42,7 @@ dependencies:
   app_settings: ^5.1.1
   awesome_notifications: ^0.9.3+1
   video_player: 2.8.3
+  permission_handler: ^11.2.0
 
 
 
@@ -85,6 +86,10 @@ flutter:
     - lib/assets/thumbnails/4.png
     - lib/assets/thumbnails/5.png
     - lib/assets/thumbnails/6.png
+    - lib/assets/thumbnails/off.png
+    - lib/assets/thumbnails/on.png
+    - lib/assets/thumbnails/white.jpg
+    - lib/assets/thumbnails/notifications.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
