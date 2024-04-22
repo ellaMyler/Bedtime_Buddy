@@ -39,6 +39,7 @@ class NotificationService {
     AwesomeNotifications().createNotification(
       content: NotificationContent(
         id: DateTime.now().millisecondsSinceEpoch % 10000,
+
         channelKey: 'local_channel',
         title: "Test Notification",
         body: "This notification works!",

@@ -32,10 +32,10 @@ class _BedtimePageState extends State<BedtimePage> {
               padding: EdgeInsets.only(top: 40.0),
               child: Text(
                   '!Recommended sleep time is 8 hours!',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                )
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                  )
               ),
 
             ),
@@ -79,39 +79,39 @@ class _BedtimePageState extends State<BedtimePage> {
                 const SizedBox(height: 20),
                 bedtime != null && wakeupTime != null
                     ? Column(
-                    children: [
-                      Text(
-                          'Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}'),
-                      Text(
-                          'Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}'),
-                      Text(
-                          'You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!, bedtimeDay!, wakeupTimeDay!)}'),
-                      const SizedBox(height: 20),
-                      ElevatedButton(
-                        onPressed: () {
-                          _showConfirmationDialog();
-                          sendBedtime('Bedtime',
-                              bedtimeDay.toString(), bedtime.toString());
-                          sendBedtime('WakeupTime',
-                              wakeupTimeDay.toString(), wakeupTime.toString());
-                          //Notification Code
-                          final bedtimeDateTime = DateTime(
-                            bedtimeDay!.year,
-                            bedtimeDay!.month,
-                            bedtimeDay!.day,
-                            bedtime!.hour,
-                            bedtime!.minute,
-                          );
-                          NotificationService.sendBedtimeNotification(bedtimeDateTime);
-                          //End of Notification Code
-                          //Alarm Code
-                          final wakeupDateTime = DateTime(
-                            wakeupTimeDay!.year,
-                            wakeupTimeDay!.month,
-                            wakeupTimeDay!.day,
-                          );
-                          AlarmSetter.setWakeupAlarm(wakeupTimeDay, wakeupTime);
-                          //End of Alarm Code
+                  children: [
+                    Text(
+                        'Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}'),
+                    Text(
+                        'Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}'),
+                    Text(
+                        'You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!, bedtimeDay!, wakeupTimeDay!)}'),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        _showConfirmationDialog();
+                        sendBedtime('Bedtime',
+                            bedtimeDay.toString(), bedtime.toString());
+                        sendBedtime('WakeupTime',
+                            wakeupTimeDay.toString(), wakeupTime.toString());
+                        //Notification Code
+                        final bedtimeDateTime = DateTime(
+                          bedtimeDay!.year,
+                          bedtimeDay!.month,
+                          bedtimeDay!.day,
+                          bedtime!.hour,
+                          bedtime!.minute,
+                        );
+                        NotificationService.sendBedtimeNotification(bedtimeDateTime);
+                        //End of Notification Code
+                        //Alarm Code
+                        final wakeupDateTime = DateTime(
+                          wakeupTimeDay!.year,
+                          wakeupTimeDay!.month,
+                          wakeupTimeDay!.day,
+                        );
+                        AlarmSetter.setWakeupAlarm(wakeupTimeDay, wakeupTime);
+                        //End of Alarm Code
                       },
                       child: const Text('Confirm'),
                     ),
