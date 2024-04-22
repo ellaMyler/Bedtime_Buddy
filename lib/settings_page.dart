@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app_settings/app_settings.dart';
-import 'package:flutter/rendering.dart';
-import 'notification_controller.dart';
-import 'notification_maker.dart';
-import 'dart:math' as math;
-
+import 'package:theme_provider/theme_provider.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -14,70 +10,76 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+
   List<String> imagePaths = [
-    'lib/assets/thumbnails/white.jpg', // Image path for switch0
-    'lib/assets/thumbnails/notifications.png',  // Image path for switch1
-    'lib/assets/thumbnails/white.jpg',
-    'lib/assets/thumbnails/white.jpg',
+    'lib/assets/thumbnails/notifications.png',
     'lib/assets/thumbnails/off.png',
-    'lib/assets/thumbnails/white.jpg',
-    'lib/assets/thumbnails/white.jpg',
-    'lib/assets/thumbnails/off.png',
-    'lib/assets/thumbnails/white.jpg',
   ];
 
   @override
   Widget build(BuildContext context) {
     double _crossAxisSpacing = 0, _mainAxisSpacing = 12, _aspectRatio = 2.5;
-    int _crossAxisCount = 3;
+    int _crossAxisCount = 1;
     double screenWidth = MediaQuery.of(context).size.width;
 
     var width = (screenWidth - ((_crossAxisCount - 1) * _crossAxisSpacing)) / _crossAxisCount;
     var height = width / _aspectRatio;
 
+    bool isFirstTime = true; // Track if it's the first time dark mode is set
+    late bool darkMode;
+    if (isFirstTime == true) {
+      isFirstTime = false;
+      String currentTheme = ThemeProvider.themeOf(context).id;
+      if (currentTheme == 'light') { // Light theme is in use
+        darkMode = false;
+      } else if (currentTheme == 'dark') { // Dark theme is in use
+        darkMode = true;
+      } else { /* Handle other themes if needed */ }
+    }
+    imagePaths[1] = darkMode ? 'lib/assets/thumbnails/on.png' : 'lib/assets/thumbnails/off.png';
+    imagePaths[0] = darkMode ? 'lib/assets/thumbnails/notificationsDark.png' : 'lib/assets/thumbnails/notifications.png';
+
     return Scaffold(
-      body: GridView.builder(
-        padding: EdgeInsets.fromLTRB(0, height * 3, 0, 0),
-        itemCount: 9,
-        itemBuilder: (context, index) => GestureDetector(
-          onTap: () {
+      body: Container(
+        child: GridView.builder(
+          padding: EdgeInsets.fromLTRB(width / 4, height, width / 4, 0),
+          itemCount: 2,
+          itemBuilder: (context, index) => GestureDetector(
+            onTap: () {
               // Toggle the image path for the tapped item
               switch (index) {
-              case 1:
-                setState(() {
-                  imagePaths[index] = imagePaths[index] == 'lib/assets/thumbnails/notifications.png'
-                      ? 'lib/assets/thumbnails/notifications.png'
-                      : 'lib/assets/thumbnails/notifications.png';});
-                AppSettings.openAppSettings();
-                break;
-              case 4:
-                setState(() {
-                  imagePaths[index] = imagePaths[index] == 'lib/assets/thumbnails/off.png'
-                      ? 'lib/assets/thumbnails/on.png'
-                      : 'lib/assets/thumbnails/off.png';});
-                break;
-              case 7:
-                setState(() {
-                  imagePaths[index] = imagePaths[index] == 'lib/assets/thumbnails/off.png'
-                      ? 'lib/assets/thumbnails/on.png'
-                      : 'lib/assets/thumbnails/off.png';});
-                break;
-          }},
-          child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(imagePaths[index]), // Use the image path based on the index
-                fit: BoxFit.cover,
+                case 0:
+                  AppSettings.openAppSettings(); // open notifications settings
+                  break;
+                case 1:
+                  setState(() {
+                    darkMode = !darkMode; // Toggle dark mode
+                    // Update notifications icon based on dark mode status
+                    if (darkMode == true) {
+                      ThemeProvider.controllerOf(context).setTheme('dark');
+                    } else {
+                      ThemeProvider.controllerOf(context).setTheme('light');
+                    }
+                  });
+                  break;
+              }
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(imagePaths[index]), // Use the image path based on the index
+                  fit: BoxFit.cover,
+                ),
               ),
+              // You can customize the container further if needed
             ),
-            // You can customize the container further if needed
           ),
-        ),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: _crossAxisCount,
-          crossAxisSpacing: _crossAxisSpacing,
-          mainAxisSpacing: _mainAxisSpacing,
-          childAspectRatio: _aspectRatio,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: _crossAxisCount,
+            crossAxisSpacing: _crossAxisSpacing,
+            mainAxisSpacing: _mainAxisSpacing,
+            childAspectRatio: _aspectRatio,
+          ),
         ),
       ),
     );
