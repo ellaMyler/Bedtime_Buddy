@@ -94,6 +94,8 @@ flutter:
     - lib/assets/thumbnails/on.png
     - lib/assets/thumbnails/notifications.png
     - lib/assets/thumbnails/notificationsDark.png
+    - lib/assets/thumbnails/AlarmSettingsButtonDark.png
+    - lib/assets/thumbnails/AlarmSettingsButton.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

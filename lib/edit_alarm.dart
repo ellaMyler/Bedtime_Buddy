@@ -133,7 +133,7 @@ class _ExampleAlarmEditScreenState extends State<ExampleAlarmEditScreen> {
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!
-                      .copyWith(color: Colors.blueAccent),
+                      .copyWith(color: Colors.deepPurpleAccent[100]),
                 ),
               ),
               TextButton(
@@ -145,7 +145,7 @@ class _ExampleAlarmEditScreenState extends State<ExampleAlarmEditScreen> {
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!
-                      .copyWith(color: Colors.blueAccent),
+                      .copyWith(color: Colors.deepPurpleAccent[100]),
                 ),
               ),
             ],
@@ -155,11 +155,10 @@ class _ExampleAlarmEditScreenState extends State<ExampleAlarmEditScreen> {
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
-                .copyWith(color: Colors.blueAccent.withOpacity(0.8)),
+                .copyWith(color: Colors.deepPurpleAccent.withOpacity(0.8)),
           ),
           RawMaterialButton(
             onPressed: pickTime,
-            fillColor: Colors.grey[200],
             child: Container(
               margin: const EdgeInsets.all(20),
               child: Text(
@@ -167,7 +166,7 @@ class _ExampleAlarmEditScreenState extends State<ExampleAlarmEditScreen> {
                 style: Theme.of(context)
                     .textTheme
                     .displayMedium!
-                    .copyWith(color: Colors.blueAccent),
+                    .copyWith(color: Colors.deepPurpleAccent[100]),
               ),
             ),
           ),

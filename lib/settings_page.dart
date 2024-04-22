@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:app_settings/app_settings.dart';
 import 'package:theme_provider/theme_provider.dart';
 
+import 'alarm_page.dart';
+
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
 
@@ -14,6 +16,7 @@ class _SettingsPageState extends State<SettingsPage> {
   List<String> imagePaths = [
     'lib/assets/thumbnails/notifications.png',
     'lib/assets/thumbnails/off.png',
+    'lib/assets/thumbnails/AlarmSettingsButtonDark.png',
   ];
 
   @override
@@ -36,14 +39,15 @@ class _SettingsPageState extends State<SettingsPage> {
         darkMode = true;
       } else { /* Handle other themes if needed */ }
     }
-    imagePaths[1] = darkMode ? 'lib/assets/thumbnails/on.png' : 'lib/assets/thumbnails/off.png';
     imagePaths[0] = darkMode ? 'lib/assets/thumbnails/notificationsDark.png' : 'lib/assets/thumbnails/notifications.png';
+    imagePaths[1] = darkMode ? 'lib/assets/thumbnails/on.png' : 'lib/assets/thumbnails/off.png';
+    imagePaths[2] = darkMode ? 'lib/assets/thumbnails/AlarmSettingsButtonDark.png' : 'lib/assets/thumbnails/AlarmSettingsButton.png';
 
     return Scaffold(
       body: Container(
         child: GridView.builder(
           padding: EdgeInsets.fromLTRB(width / 4, height, width / 4, 0),
-          itemCount: 2,
+          itemCount: 3,
           itemBuilder: (context, index) => GestureDetector(
             onTap: () {
               // Toggle the image path for the tapped item
@@ -61,6 +65,13 @@ class _SettingsPageState extends State<SettingsPage> {
                       ThemeProvider.controllerOf(context).setTheme('light');
                     }
                   });
+                  break;
+                case 2:
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ExampleAlarmHomeScreen()),
+                  );
+
                   break;
               }
             },
