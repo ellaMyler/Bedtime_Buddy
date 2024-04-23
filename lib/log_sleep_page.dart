@@ -41,6 +41,13 @@ class _LogSleepPageState extends State<LogSleepPage> {
                 label: Text(_selectedDate != null
                     ? 'Selected Date: ${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}'
                     : 'Select Date'),
+               style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Color.fromRGBO(51, 43, 138, 1)),
+                foregroundColor: MaterialStateProperty.all(Colors.white),
+                textStyle: MaterialStateProperty.all(
+                TextStyle(fontWeight: FontWeight.bold),
+               ),
+               ),
               ),
             ),
           ),
@@ -99,7 +106,7 @@ class _SleepLoggingPageState extends State<SleepLoggingPage> {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
               child: Container(
-                color: Color.fromRGBO(143, 189, 255, 0.5),
+                color: Color.fromRGBO(9, 7, 61, 1),
                 child: Center(
                   child: Text(
                     'Log Sleep - ${_getFormattedDate(widget.selectedDate)}',
@@ -131,14 +138,14 @@ class _SleepLoggingPageState extends State<SleepLoggingPage> {
                 children: <Widget>[
                   Text(
                     'Select your sleep quality',
-                    style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.white),
                     textAlign: TextAlign.center,
                   ),
                   _buildSleepQualitySlider(),
                   SizedBox(height: 20),
                   Text(
                     'Select your stress level',
-                    style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.white),
                     textAlign: TextAlign.center,
                   ),
                   _buildStressLevelSlider(),
@@ -149,8 +156,14 @@ class _SleepLoggingPageState extends State<SleepLoggingPage> {
                     },
                     decoration: InputDecoration(
                       labelText: 'Your thoughts on how you slept',
-                      prefixIcon: Icon(Icons.cloud),
-                      labelStyle: TextStyle(fontWeight: FontWeight.bold),
+                      prefixIcon: Icon(Icons.cloud, color: Colors.white),
+                      labelStyle: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.blue),
+                      ),
                     ),
                   ),
                   SizedBox(height: 20),
@@ -160,8 +173,14 @@ class _SleepLoggingPageState extends State<SleepLoggingPage> {
                     },
                     decoration: InputDecoration(
                       labelText: 'Your dreams and/or nightmares',
-                      prefixIcon: Icon(Icons.nightlight_round),
-                      labelStyle: TextStyle(fontWeight: FontWeight.bold),
+                      prefixIcon: Icon(Icons.nightlight_round, color: Colors.white),
+                      labelStyle: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.blue),
+                      ),
                     ),
                   ),
                   SizedBox(height: 20),
@@ -177,8 +196,14 @@ class _SleepLoggingPageState extends State<SleepLoggingPage> {
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
                             labelText: 'Hours',
-                            prefixIcon: Icon(Icons.access_time),
-                            labelStyle: TextStyle(fontWeight: FontWeight.bold),
+                            prefixIcon: Icon(Icons.access_time, color: Colors.white),
+                            labelStyle: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.blue),
+                            ),
                           ),
                         ),
                       ),
@@ -191,10 +216,16 @@ class _SleepLoggingPageState extends State<SleepLoggingPage> {
                             });
                           },
                           keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             labelText: 'Minutes',
-                            prefixIcon: Icon(Icons.access_time),
-                            labelStyle: TextStyle(fontWeight: FontWeight.bold),
+                            prefixIcon: Icon(Icons.access_time, color: Colors.white),
+                            labelStyle: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.blue),
+                            ),
                           ),
                         ),
                       ),
@@ -208,13 +239,20 @@ class _SleepLoggingPageState extends State<SleepLoggingPage> {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.bed),
+                        Icon(Icons.bed, color: Colors.white),
                         SizedBox(width: 8),
                         Text('Log Sleep'),
-
                       ],
                     ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Color.fromRGBO(51, 43, 138, 1)),
+                      foregroundColor: MaterialStateProperty.all(Colors.white),
+                      textStyle: MaterialStateProperty.all(
+                        TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ),
+
                   SizedBox(height: 20), // Add some space between buttons
                   SizedBox(
                     width: double.infinity,
