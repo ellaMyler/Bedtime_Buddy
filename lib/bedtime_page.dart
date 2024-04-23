@@ -46,25 +46,28 @@ class _BedtimePageState extends State<BedtimePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                ElevatedButton(
+                ElevatedButton.icon(
                   onPressed: () {
                     _selectTime(true);
                   },
-                  child: const Text('Set Bedtime'),
+                  icon: Icon(Icons.bedtime),
+                  label: const Text('Set Bedtime'),
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton(
+                ElevatedButton.icon(
                   onPressed: () {
                     _selectTime(false);
                   },
-                  child: const Text('Set Wakeup Time'),
+                  icon: Icon(Icons.wb_sunny),
+                  label: const Text('Set Wakeup'),
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton(
+                ElevatedButton.icon(
                   onPressed: () {
                     //_setPrevious();
                   },
-                  child: const Text('Set Previous'),
+                  icon: Icon(Icons.refresh),
+                  label: const Text('Set Previous'),
                 ),
                 const SizedBox(height: 20),
                 bedtime != null && wakeupTime != null
