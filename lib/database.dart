@@ -4,8 +4,14 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'bedtime_page.dart';
 
 final databaseReference = FirebaseDatabase.instance.ref();
+
+TimeOfDay? previousBedTime;
+DateTime? previousBedtimeDay;
+TimeOfDay? previousWakeupTime;
+DateTime? previousWakeupTimeDay;
 
 
 void sendBedtime(String type, String dayOfWeek, String timeOfDay) async {
@@ -18,7 +24,81 @@ void sendMessage(String message) async {
 
 }
 
-void readData() { // Test function 
+void storePrevious(TimeOfDay? previousBT, DateTime? previousBD, TimeOfDay? previousWT, DateTime? previousWD){
+  final previousReference = FirebaseDatabase.instance.ref("previous");
+
+  previousReference.set({
+    "Bedtime" : previousBT.toString(),
+    "BedtimeDay" : previousBD.toString(),
+    "Wakeup" : previousWT.toString(),
+    "WakeupDay" : previousWD.toString(),
+  });
+}
+
+Future<void> readPrevious() async {
+  try {
+    final snapshot = await databaseReference.child('previous').get();
+    if (snapshot.exists) {
+      previousBedTime = await getPreviousTime("Bedtime");
+      previousBedtimeDay = await getPreviousDay("BedtimeDay");
+      previousWakeupTime = await getPreviousTime("Wakeup");
+      previousWakeupTimeDay = await getPreviousDay("WakeupDay");
+    } else {
+      print("No previous");
+    }
+  } catch (e) {
+    print("Error reading previous data: $e");
+  }
+}
+
+Future<TimeOfDay> getPreviousTime(String type) async {
+  final previous = FirebaseDatabase.instance.ref();
+  String value = '';
+  try {
+    DataSnapshot snapshot = await previous.child("previous/" + type).get();
+    if (snapshot.exists) {
+      value = snapshot.value.toString();
+      // Extract hour and minute from the string
+      String timeString = value.replaceAll("TimeOfDay(", "").replaceAll(")", "");
+      List<String> timeParts = timeString.split(':');
+      int hour = int.parse(timeParts[0]);
+      int minute = int.parse(timeParts[1]);
+      return TimeOfDay(hour: hour, minute: minute);
+    } else {
+      print('No data available on $type');
+      // Return a default time
+      return TimeOfDay(hour: 0, minute: 0);
+    }
+  } catch (error) {
+    print("Error: $error");
+    // Return a default time
+    return TimeOfDay(hour: 0, minute: 0);
+  }
+}
+
+Future<DateTime> getPreviousDay(String type) async {
+  final previous = FirebaseDatabase.instance.ref();
+  String value = '';
+  try {
+    DataSnapshot snapshot = await previous.child("previous/" + type).get();
+    if (snapshot.exists) {
+      value = snapshot.value.toString();
+      // Parse the datetime string into a DateTime object
+      DateTime dateTime = DateTime.parse(value);
+      return dateTime;
+    } else {
+      print('No data available on $type');
+      // Return a default datetime
+      return DateTime(-1);
+    }
+  } catch (error) {
+    print("Error: $error");
+    // Return a default datetime
+    return DateTime(-1);
+  }
+}
+
+void readData() {
   final ref = FirebaseDatabase.instance.ref();
 
   // Get the snapshot asynchronously

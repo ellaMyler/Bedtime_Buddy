@@ -14,6 +14,7 @@ class _BedtimePageState extends State<BedtimePage> {
   TimeOfDay? wakeupTime;
   DateTime? wakeupTimeDay;
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,8 +64,9 @@ class _BedtimePageState extends State<BedtimePage> {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton.icon(
-                  onPressed: () {
-                    //_setPrevious();
+                  onPressed: () async{
+                    await setPrevious();
+                    print(bedtime!);
                   },
                   icon: Icon(Icons.refresh),
                   label: const Text('Set Previous'),
@@ -83,6 +85,7 @@ class _BedtimePageState extends State<BedtimePage> {
                       ElevatedButton(
                         onPressed: () {
                           _showConfirmationDialog();
+                          storePrevious(bedtime!, bedtimeDay!, wakeupTime!, wakeupTimeDay!);
                       },
                       child: const Text('Confirm'),
                     ),
@@ -96,18 +99,6 @@ class _BedtimePageState extends State<BedtimePage> {
         ],
       ),
     );
-  }
-
-  void _setPrevious(DateTime? previousBTDay, TimeOfDay? previousBTTime, DateTime? previousWTDay, TimeOfDay? previousWTTime) {
-
-  }
-
-  DateTime? getDay(String type, String ) {
-
-  }
-
-  TimeOfDay? getTime() {
-
   }
 
   Future<void> _selectTime(bool isBedtime) async {
@@ -210,6 +201,30 @@ class _BedtimePageState extends State<BedtimePage> {
     }
     return durationText;
   }
+
+  Future<void> setPrevious() async {
+    await readPrevious();
+    setState(() {
+      bedtime = previousBedTime;
+      bedtimeDay = previousBedtimeDay;
+      wakeupTime = previousWakeupTime;
+      wakeupTimeDay = previousWakeupTimeDay;
+    });
+  }
+
+  TimeOfDay? getBedtime(){
+    return bedtime;
+  }
+  DateTime? getBedtimeDay(){
+    return bedtimeDay;
+  }
+  TimeOfDay? getWakeupTime(){
+    return wakeupTime;
+  }
+  DateTime? getWakeupTimeDay(){
+    return wakeupTimeDay;
+  }
+
 }
 
 class TimeOfDayDialog extends StatefulWidget {
