@@ -6,12 +6,52 @@ import 'package:alarm/alarm.dart';
 import 'package:sleep_tracker/app_ui.dart';
 import 'package:theme_provider/theme_provider.dart';
 import 'notification_maker.dart';
+import 'ring_page.dart';
+import 'notification_controller.dart';
 
 void main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await NotificationService.initNotifications(); // Starts Notifications
   await Alarm.init(); // Starts Alarms
+
+  //Notification Initialization Code
+  AwesomeNotifications().initialize(
+      null, //Icon; null defaults to app icon
+      [
+        NotificationChannel(
+            channelGroupKey: 'basic_channel_group',
+            channelKey: 'local_channel',
+            channelName: 'Basic Notification',
+            channelDescription: 'Notification channel for basic notifications',
+            importance: NotificationImportance.High,
+            defaultColor: Color(0xFF9D50DD),
+            ledColor: Colors.white
+        )
+      ],
+      debug: true
+  );
+  //End of Notification Initialization Code
+
+  // Initialize Awesome Notifications For Wakeup Alarms
+  AwesomeNotifications().initialize(
+      null, //Icon; null defaults to app icon
+      [
+        NotificationChannel(
+          channelKey: 'wakeup_alarm_channel',
+          channelName: 'Wakeup Alarms',
+          channelDescription: 'Notification channel for wakeup alarms',
+          defaultColor: Color(0xFF9D50DD),
+          ledColor: Colors.white,
+          importance: NotificationImportance.High,
+        ),
+        // Include other channels as needed
+      ],
+      debug: true
+  );
+
+
 
 
   runApp(const SleepTrackerApp());
@@ -20,6 +60,9 @@ void main() async {
 class SleepTrackerApp extends StatelessWidget {
   const SleepTrackerApp({Key? key}) : super(key: key);
 
+class SleepTrackerApp extends StatelessWidget{
+  const SleepTrackerApp({super.key});
+  static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   @override
   Widget build(BuildContext context) {
     return ThemeProvider(

@@ -1,6 +1,7 @@
 import 'package:alarm/alarm.dart';
 import 'package:alarm/model/alarm_settings.dart';
 import 'package:flutter/material.dart';
+import 'alarm_setter.dart';
 
 class ExampleAlarmRingScreen extends StatelessWidget {
   final AlarmSettings alarmSettings;
@@ -46,9 +47,10 @@ class ExampleAlarmRingScreen extends StatelessWidget {
                   ),
                 ),
                 RawMaterialButton(
-                  onPressed: () {
-                    Alarm.stop(alarmSettings.id)
-                        .then((_) => Navigator.pop(context));
+                  onPressed: () async {
+                    await Alarm.stop(alarmSettings.id);
+                    AlarmRepository.removeAlarm(alarmSettings.id);  // Remove the alarm from the repository
+                    Navigator.pop(context);  // Close the screen
                   },
                   child: Text(
                     "Stop",
