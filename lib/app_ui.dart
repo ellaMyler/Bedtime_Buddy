@@ -39,12 +39,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-            'Sleep Tracker',
-        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-
-      ),
-        backgroundColor: Color.fromRGBO(9, 7, 61, 1),
+        title: const Text('Sleep Tracker'),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -54,7 +49,6 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Bedtime',
-            backgroundColor: Color.fromRGBO(9, 7, 61, 1),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bedtime),
@@ -74,7 +68,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.white,
+        selectedItemColor: Colors.amber[800],
         unselectedItemColor: Colors.grey,
 
         onTap: _onItemTapped,
