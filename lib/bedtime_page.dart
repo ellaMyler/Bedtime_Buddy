@@ -20,105 +20,79 @@ class _BedtimePageState extends State<BedtimePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bedtime/Wakeup'),
+        title: const Text(
+          'Bedtime/Wakeup',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         centerTitle: true,
+        backgroundColor: Color.fromRGBO(9, 7, 61, 1),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          const Align(
-            alignment: Alignment.topCenter,
-            child: Padding(
-              padding: EdgeInsets.only(top: 40.0),
-              child: Text(
-                  '!Recommended sleep time is 8 hours!',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15,
-                  )
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("images/agile_moonlit_background.png"),
+                fit: BoxFit.cover,
               ),
-
             ),
           ),
-          const Expanded(
-            child: SizedBox(),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
+          SingleChildScrollView(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    _selectTime(true).then((_) {
-                      if (bedtime != null && bedtimeDay != null) {
+                const Padding(
+                  padding: EdgeInsets.only(top: 40.0),
+                  child: Text(
+                    '!Recommended sleep time is 8 hours!',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                SizedBox(height: 20),
+                _buildButton('Set Bedtime', () {
+                  _selectTime(true);
+                }),
+                SizedBox(height: 20),
+                _buildButton('Set Wakeup Time', () {
+                  _selectTime(false);
+                }),
+                SizedBox(height: 20),
+                _buildButton('Set Previous', () {
+                  // Implement functionality or remove if not needed
+                }),
+                if (bedtime != null && wakeupTime != null)
+                  Column(
+                    children: [
+                      Text(
+                        'Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        'Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        'You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!, bedtimeDay!, wakeupTimeDay!)}',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      SizedBox(height: 20),
+                      _buildButton('Confirm', () {
                         _showConfirmationDialog();
                         sendBedtime('Bedtime', bedtimeDay.toString(), bedtime.toString());
                         sendBedtime('WakeupTime', wakeupTimeDay.toString(), wakeupTime.toString());
-                      } else {
-                        // Needs an error if the time was NOT selected?
-                      }
-                    });
-                  },
-                  child: const Text('Set Bedtime'),
-                ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    _selectTime(false);
-                  },
-                  child: const Text('Set Wakeup Time'),
-                ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    //_setPrevious();
-                  },
-                  child: const Text('Set Previous'),
-                ),
-                const SizedBox(height: 20),
-                bedtime != null && wakeupTime != null
-                    ? Column(
-                  children: [
-                    Text(
-                        'Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}'),
-                    Text(
-                        'Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}'),
-                    Text(
-                        'You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!, bedtimeDay!, wakeupTimeDay!)}'),
-                    const SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {
-                        _showConfirmationDialog();
-                        sendBedtime('Bedtime',
-                            bedtimeDay.toString(), bedtime.toString());
-                        sendBedtime('WakeupTime',
-                            wakeupTimeDay.toString(), wakeupTime.toString());
-                        //Notification Code
-                        final bedtimeDateTime = DateTime(
-                          bedtimeDay!.year,
-                          bedtimeDay!.month,
-                          bedtimeDay!.day,
-                          bedtime!.hour,
-                          bedtime!.minute,
-                        );
-                        NotificationService.sendBedtimeNotification(bedtimeDateTime);
-                        //End of Notification Code
-                        //Alarm Code
-                        final wakeupDateTime = DateTime(
-                          wakeupTimeDay!.year,
-                          wakeupTimeDay!.month,
-                          wakeupTimeDay!.day,
-                        );
-                        AlarmSetter.setWakeupAlarm(wakeupTimeDay, wakeupTime);
-                        //End of Alarm Code
-                      },
-                      child: const Text('Confirm'),
-                    ),
-                    const SizedBox(height: 40),
-                  ],
-                )
-                    : const SizedBox(height: 20),
+                      }),
+                      SizedBox(height: 40),
+                    ],
+                  ),
+                SizedBox(height: 20),
               ],
             ),
           ),
@@ -127,16 +101,18 @@ class _BedtimePageState extends State<BedtimePage> {
     );
   }
 
-  void _setPrevious(DateTime? previousBTDay, TimeOfDay? previousBTTime, DateTime? previousWTDay, TimeOfDay? previousWTTime) {
-
-  }
-
-  DateTime? getDay(String type, String ) {
-
-  }
-
-  TimeOfDay? getTime() {
-
+  Widget _buildButton(String text, VoidCallback onPressed) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      child: Text(text),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Color.fromRGBO(51, 43, 138, 1)),
+        foregroundColor: MaterialStateProperty.all(Colors.white),
+        textStyle: MaterialStateProperty.all(
+          TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
   }
 
   Future<void> _selectTime(bool isBedtime) async {
@@ -148,7 +124,7 @@ class _BedtimePageState extends State<BedtimePage> {
     );
 
     if (pickedDate != null) {
-      final TimeOfDay? pickedTime = await showDialog(
+      final TimeOfDay? pickedTime = await showDialog<TimeOfDay>(
         context: context,
         builder: (BuildContext context) {
           return TimeOfDayDialog(

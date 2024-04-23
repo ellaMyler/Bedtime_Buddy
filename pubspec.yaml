@@ -30,7 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
   flutter_event_calendar: ^1.0.0
+
+  pie_chart: ^5.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -44,6 +47,7 @@ dependencies:
   video_player: 2.8.3
   alarm: ^3.1.0
   theme_provider: ^0.6.0
+
 
 
 
@@ -93,6 +97,9 @@ flutter:
     - lib/assets/thumbnails/notificationsDark.png
     - lib/assets/thumbnails/AlarmSettingsButtonDark.png
     - lib/assets/thumbnails/AlarmSettingsButton.png
+    - images/ohshitnoway.jpg
+    - images/agile_sunny_background.png
+    - images/agile_moonlit_background.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
