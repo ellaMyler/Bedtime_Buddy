@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:theme_provider/theme_provider.dart';
 import 'bedtime_page.dart';
 import 'log_sleep_page.dart';
+import 'main.dart';
 import 'stats_page.dart';
 import 'settings_page.dart';
 import 'videos_page.dart';
-
-//Contains the UI settings for the app.
-//Changes to the UI are done here
-
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -20,7 +18,6 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
   static const List<Widget> _widgetOptions = <Widget>[
-    //Separated Classes located in their respective files
     BedtimePage(),
     LogSleepPage(),
     VideosPage(),
@@ -34,17 +31,24 @@ class _MainScreenState extends State<MainScreen> {
     });
   }
 
-  //Widget responsible for button UI
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bedtime Buddy'),
+        title: const Text(
+          'Bedtime Buddy',
+          style: TextStyle(fontWeight: FontWeight.w300, fontFamily: 'plastun'),
+        ),
+        centerTitle: false,
+        backgroundColor:
+        ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor,
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor:
+        ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -68,9 +72,9 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        unselectedItemColor: Colors.grey,
-
+        selectedItemColor: Colors.deepPurple[400],
+        unselectedItemColor: Theme.of(context).textTheme.caption!.color,
+        type: BottomNavigationBarType.fixed,
         onTap: _onItemTapped,
       ),
     );

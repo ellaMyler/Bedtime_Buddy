@@ -30,7 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
   flutter_event_calendar: ^1.0.0
+
+  pie_chart: ^5.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -42,8 +45,12 @@ dependencies:
   app_settings: ^5.1.1
   awesome_notifications: ^0.9.3+1
   video_player: 2.8.3
+  alarm: ^3.1.0
+  theme_provider: ^0.6.0
 
 
+
+  fl_chart: ^0.67.0
 
 dev_dependencies:
   flutter_test:
@@ -85,6 +92,14 @@ flutter:
     - lib/assets/thumbnails/4.png
     - lib/assets/thumbnails/5.png
     - lib/assets/thumbnails/6.png
+    - lib/assets/thumbnails/off.png
+    - lib/assets/thumbnails/on.png
+    - lib/assets/thumbnails/notifications.png
+    - lib/assets/thumbnails/notificationsDark.png
+    - lib/assets/thumbnails/AlarmSettingsButtonDark.png
+    - lib/assets/thumbnails/AlarmSettingsButton.png
+    - images/light.png
+    - images/dark.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -97,6 +112,8 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+
+
   # fonts:
   #   - family: Schyler
   #     fonts:
@@ -111,3 +128,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  fonts:
+    - family: plastun
+      fonts:
+        - asset: lib/assets/fonts/plastun.otf
