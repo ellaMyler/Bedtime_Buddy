@@ -42,9 +42,9 @@ class _BedtimePageState extends State<BedtimePage> {
           ),
           SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0),
+              padding: const EdgeInsets.symmetric(vertical: 200.0, horizontal: 120.0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   ElevatedButton.icon(
                     onPressed: () => _selectTime(true),
