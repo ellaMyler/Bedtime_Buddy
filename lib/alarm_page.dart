@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:alarm/alarm.dart';
 import 'package:alarm/model/alarm_settings.dart';
 import 'package:theme_provider/theme_provider.dart';
@@ -10,17 +9,22 @@ import 'shortcut_button.dart';
 import 'tile.dart';
 import 'package:flutter/material.dart';
 
+
 class ExampleAlarmHomeScreen extends StatefulWidget {
   const ExampleAlarmHomeScreen({Key? key}) : super(key: key);
+
 
   @override
   State<ExampleAlarmHomeScreen> createState() => _ExampleAlarmHomeScreenState();
 }
 
+
 class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
   late List<AlarmSettings> alarms;
 
+
   static StreamSubscription<AlarmSettings>? subscription;
+
 
   @override
   void initState() {
@@ -37,12 +41,14 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
     );
   }
 
+
   void loadAlarms() {
     setState(() {
       alarms = Alarm.getAlarms();
       alarms.sort((a, b) => a.dateTime.compareTo(b.dateTime));
     });
   }
+
 
   Future<void> navigateToRingScreen(AlarmSettings alarmSettings) async {
     try {
@@ -57,6 +63,7 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
       print('Failed to navigate: $e');  // Log any errors encountered during navigation
     }
   }
+
 
   Future<void> navigateToAlarmScreen(AlarmSettings? settings) async {
     final res = await showModalBottomSheet<bool?>(
@@ -73,14 +80,18 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
       },
     );
 
-    if (res != null && res) loadAlarms();
+
+    if (res != null && res == true) loadAlarms();
+
   }
+
 
   @override
   void dispose() {
     subscription?.cancel();
     super.dispose();
   }
+
 
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sleep_tracker/database.dart';
 import 'package:theme_provider/theme_provider.dart';
 import 'main.dart';
+import 'notification_maker.dart';
 
 class BedtimePage extends StatefulWidget {
   const BedtimePage({Key? key}) : super(key: key);
@@ -9,7 +10,6 @@ class BedtimePage extends StatefulWidget {
   @override
   State<BedtimePage> createState() => _BedtimePageState();
 }
-
 class _BedtimePageState extends State<BedtimePage> {
   TimeOfDay? bedtime;
   DateTime? bedtimeDay;
@@ -90,6 +90,84 @@ class _BedtimePageState extends State<BedtimePage> {
                           child: const Text('Confirm'),
                         ),
                       ],
+          const Expanded(
+            child: SizedBox(),
+          ),
+
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    _selectTime(true).then((_) {
+                      if (bedtime != null && bedtimeDay != null) {
+                        _showConfirmationDialog();
+                        sendBedtime('Bedtime', bedtimeDay.toString(), bedtime.toString());
+                        sendBedtime('WakeupTime', wakeupTimeDay.toString(), wakeupTime.toString());
+                      } else {
+                        // Needs an error if the time was NOT selected?
+                      }
+                    });
+                  },
+                  child: const Text('Set Bedtime'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    _selectTime(false);
+                  },
+                  child: const Text('Set Wakeup Time'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    //_setPrevious();
+                  },
+                  child: const Text('Set Previous'),
+                ),
+                const SizedBox(height: 20),
+                bedtime != null && wakeupTime != null
+                    ? Column(
+                    children: [
+                      Text(
+                          'Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}'),
+                      Text(
+                          'Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}'),
+                      Text(
+                          'You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!, bedtimeDay!, wakeupTimeDay!)}'),
+                      const SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: () {
+                          _showConfirmationDialog();
+                          sendBedtime('Bedtime',
+                              bedtimeDay.toString(), bedtime.toString());
+                          sendBedtime('WakeupTime',
+                              wakeupTimeDay.toString(), wakeupTime.toString());
+                          //Notification Code
+                          final bedtimeDateTime = DateTime(
+                            bedtimeDay!.year,
+                            bedtimeDay!.month,
+                            bedtimeDay!.day,
+                            bedtime!.hour,
+                            bedtime!.minute,
+                          );
+                          NotificationService.sendBedtimeNotification(bedtimeDateTime);
+                          //End of Notification Code
+                          //Alarm Code
+                          final wakeupDateTime = DateTime(
+                            wakeupTimeDay!.year,
+                            wakeupTimeDay!.month,
+                            wakeupTimeDay!.day,
+                            wakeupTime!.hour,
+                            wakeupTime!.minute,
+                          );
+                          AlarmSetter.setWakeupAlarm(wakeupTimeDay, wakeupTime);
+                          AlarmSetter.sendBedtimeNotification(wakeupDateTime);
+                          //End of Alarm Code
+                      },
+                      child: const Text('Confirm'),
                     ),
                 ],
               ),

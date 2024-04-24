@@ -39,6 +39,7 @@ class NotificationService {
   }
 
   static Future<void> sendBedtimeNotification(DateTime bedtimeDateTime) async {
+    int notificationId = (DateTime.now().millisecondsSinceEpoch % 10000) + 10000;  // +1000 for bedtime notifications
     await AwesomeNotifications().createNotification(
       schedule: NotificationCalendar(
         day: bedtimeDateTime!.day,
@@ -48,10 +49,11 @@ class NotificationService {
         minute: bedtimeDateTime!.minute,
       ),
       content: NotificationContent(
-        id: DateTime.now().millisecondsSinceEpoch % 10000,
+        id: notificationId,
         channelKey: 'local_channel',
         title: 'Time for Bed!',
         body: "It is time for you to go to bed",
+        payload: {'type': 'bedtime'},  // Custom payload to identify bedtime notification
       ),
     );
   }
