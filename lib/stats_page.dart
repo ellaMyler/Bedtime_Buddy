@@ -2,6 +2,9 @@
 
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:theme_provider/theme_provider.dart';
+
+import 'main.dart';
 
 //Stats Page
 class SleepStatsPage extends StatefulWidget {
@@ -20,6 +23,8 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Sleep Stats', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+          centerTitle: true,
+          backgroundColor: ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor,
         ),
         body: SingleChildScrollView(
           child: Column(

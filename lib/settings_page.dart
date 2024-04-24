@@ -3,6 +3,7 @@ import 'package:app_settings/app_settings.dart';
 import 'package:theme_provider/theme_provider.dart';
 
 import 'alarm_page.dart';
+import 'main.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -21,6 +22,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
   @override
   Widget build(BuildContext context) {
+    String currentTheme = ThemeProvider.themeOf(context).id;
     double _crossAxisSpacing = 0, _mainAxisSpacing = 12, _aspectRatio = 2.5;
     int _crossAxisCount = 1;
     double screenWidth = MediaQuery.of(context).size.width;
@@ -44,7 +46,18 @@ class _SettingsPageState extends State<SettingsPage> {
     imagePaths[2] = darkMode ? 'lib/assets/thumbnails/AlarmSettingsButtonDark.png' : 'lib/assets/thumbnails/AlarmSettingsButton.png';
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Settings', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+        centerTitle: true,
+        backgroundColor: ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor,
+      ),
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/$currentTheme.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: GridView.builder(
           padding: EdgeInsets.fromLTRB(width / 4, height, width / 4, 0),
           itemCount: 3,

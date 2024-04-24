@@ -39,9 +39,19 @@ class SleepTrackerApp extends StatelessWidget {
           }
         }
       },
-      themes: <AppTheme>[
-        AppTheme.light(id: 'light'),
-        AppTheme.dark(id: 'dark'),
+      themes: [
+        AppTheme(
+          id: "light",
+          description: "Light Theme",
+          data: ThemeData.light(),
+          options: MyThemeOptions(const Color.fromRGBO(179, 175, 255, 1.0)), // change the color here for light mode!
+        ),
+        AppTheme(
+          id: "dark",
+          description: "Dark Theme",
+          data: ThemeData.dark(),
+          options: MyThemeOptions(const Color.fromRGBO(9, 7, 61, 1)), // change the color here for dark mode!! 
+        ),
       ],
       child: Builder(
         builder: (themeContext) => MaterialApp(
@@ -51,4 +61,9 @@ class SleepTrackerApp extends StatelessWidget {
       ),
     );
   }
+}
+// used in everything to set dark mode stuff
+class MyThemeOptions implements AppThemeOptions{
+  final Color backgroundColor;
+  MyThemeOptions(this.backgroundColor);
 }

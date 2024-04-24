@@ -2,12 +2,13 @@ import 'dart:async';
 
 import 'package:alarm/alarm.dart';
 import 'package:alarm/model/alarm_settings.dart';
+import 'package:theme_provider/theme_provider.dart';
 import 'edit_alarm.dart';
+import 'main.dart';
 import 'ring_page.dart';
 import 'shortcut_button.dart';
 import 'tile.dart';
 import 'package:flutter/material.dart';
-//import 'package:permission_handler/permission_handler.dart';
 
 class ExampleAlarmHomeScreen extends StatefulWidget {
   const ExampleAlarmHomeScreen({Key? key}) : super(key: key);
@@ -33,7 +34,7 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
   void loadAlarms() {
     setState(() {
       alarms = Alarm.getAlarms();
-      alarms.sort((a, b) => a.dateTime.isBefore(b.dateTime) ? 0 : 1);
+      alarms.sort((a, b) => a.dateTime.compareTo(b.dateTime));
     });
   }
 
@@ -41,8 +42,7 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
     await Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) =>
-            ExampleAlarmRingScreen(alarmSettings: alarmSettings),
+        builder: (context) => ExampleAlarmRingScreen(alarmSettings: alarmSettings),
       ),
     );
     loadAlarms();
@@ -50,19 +50,20 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
 
   Future<void> navigateToAlarmScreen(AlarmSettings? settings) async {
     final res = await showModalBottomSheet<bool?>(
-        context: context,
-        isScrollControlled: true,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        builder: (context) {
-          return FractionallySizedBox(
-            heightFactor: 0.75,
-            child: ExampleAlarmEditScreen(alarmSettings: settings),
-          );
-        });
+      context: context,
+      isScrollControlled: true,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      builder: (context) {
+        return FractionallySizedBox(
+          heightFactor: 0.75,
+          child: ExampleAlarmEditScreen(alarmSettings: settings),
+        );
+      },
+    );
 
-    if (res != null && res == true) loadAlarms();
+    if (res != null && res) loadAlarms();
   }
 
   @override
@@ -73,31 +74,49 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    String currentTheme = ThemeProvider.themeOf(context).id;
     return Scaffold(
-      appBar: AppBar(title: const Text('alarm 3.1.0')),
-      body: SafeArea(
-        child: alarms.isNotEmpty
-            ? ListView.separated(
-          itemCount: alarms.length,
-          separatorBuilder: (context, index) => const Divider(height: 1),
-          itemBuilder: (context, index) {
-            return ExampleAlarmTile(
-              key: Key(alarms[index].id.toString()),
-              title: TimeOfDay(
-                hour: alarms[index].dateTime.hour,
-                minute: alarms[index].dateTime.minute,
-              ).format(context),
-              onPressed: () => navigateToAlarmScreen(alarms[index]),
-              onDismissed: () {
-                Alarm.stop(alarms[index].id).then((_) => loadAlarms());
-              },
-            );
-          },
-        )
-            : Center(
-          child: Text(
-            "No alarms set",
-            style: Theme.of(context).textTheme.titleMedium,
+      appBar: AppBar(
+        title: const Text(
+          'Sleep Tracker',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor,
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/$currentTheme.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SafeArea(
+          child: alarms.isNotEmpty
+              ? ListView.separated(
+            itemCount: alarms.length,
+            separatorBuilder: (context, index) => const Divider(height: 1),
+            itemBuilder: (context, index) {
+              return ExampleAlarmTile(
+                key: Key(alarms[index].id.toString()),
+                title: TimeOfDay(
+                  hour: alarms[index].dateTime.hour,
+                  minute: alarms[index].dateTime.minute,
+                ).format(context),
+                onPressed: () => navigateToAlarmScreen(alarms[index]),
+                onDismissed: () {
+                  Alarm.stop(alarms[index].id).then((_) => loadAlarms());
+                },
+              );
+            },
+          )
+              : const Center(
+            child: Text(
+              "No alarms set",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
           ),
         ),
       ),

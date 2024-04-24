@@ -97,9 +97,8 @@ flutter:
     - lib/assets/thumbnails/notificationsDark.png
     - lib/assets/thumbnails/AlarmSettingsButtonDark.png
     - lib/assets/thumbnails/AlarmSettingsButton.png
-    - images/ohshitnoway.jpg
-    - images/agile_sunny_background.png
-    - images/agile_moonlit_background.png
+    - images/light.png
+    - images/dark.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -112,6 +111,8 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+
+
   # fonts:
   #   - family: Schyler
   #     fonts:
@@ -126,3 +127,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  fonts:
+    - family: plastun
+      fonts:
+        - asset: lib/assets/fonts/plastun.otf

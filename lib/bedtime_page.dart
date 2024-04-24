@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sleep_tracker/database.dart';
-import 'notification_maker.dart';
-import 'alarm_setter.dart';
+import 'package:theme_provider/theme_provider.dart';
+import 'main.dart';
+
 
 class BedtimePage extends StatefulWidget {
   const BedtimePage({Key? key}) : super(key: key);
@@ -18,24 +19,22 @@ class _BedtimePageState extends State<BedtimePage> {
 
   @override
   Widget build(BuildContext context) {
+    String currentTheme = ThemeProvider.themeOf(context).id;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           'Bedtime/Wakeup',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
         ),
         centerTitle: true,
-        backgroundColor: Color.fromRGBO(9, 7, 61, 1),
+        backgroundColor: ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor,
       ),
       body: Stack(
         children: [
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("images/agile_moonlit_background.png"),
+                image: AssetImage('images/$currentTheme.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -44,16 +43,21 @@ class _BedtimePageState extends State<BedtimePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 40.0),
-                  child: Text(
-                    '!Recommended sleep time is 8 hours!',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                      color: Colors.white,
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0), // Adjust padding values as needed
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10), // Optional: Add border radius for rounded corners
+                      color: ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor, // Optional: Change background color
                     ),
-                    textAlign: TextAlign.center,
+                    child: const Text(
+                      '!Recommended sleep time is 8 hours!',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
                 SizedBox(height: 20),
@@ -66,22 +70,19 @@ class _BedtimePageState extends State<BedtimePage> {
                 }),
                 SizedBox(height: 20),
                 _buildButton('Set Previous', () {
-                  // Implement functionality or remove if not needed
+
                 }),
                 if (bedtime != null && wakeupTime != null)
                   Column(
                     children: [
-                      Text(
+                      _buildTextWithBox(
                         'Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}',
-                        style: TextStyle(color: Colors.white),
                       ),
-                      Text(
+                      _buildTextWithBox(
                         'Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}',
-                        style: TextStyle(color: Colors.white),
                       ),
-                      Text(
+                      _buildTextWithBox(
                         'You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!, bedtimeDay!, wakeupTimeDay!)}',
-                        style: TextStyle(color: Colors.white),
                       ),
                       SizedBox(height: 20),
                       _buildButton('Confirm', () {
@@ -101,16 +102,27 @@ class _BedtimePageState extends State<BedtimePage> {
     );
   }
 
+  Widget _buildTextWithBox(String text) {
+    return Container(
+      decoration: BoxDecoration(
+        color: ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor, // Change color as needed
+        borderRadius: BorderRadius.circular(10), // Adjust border radius as needed
+      ),
+      margin: EdgeInsets.symmetric(vertical: 5), // Adjust margin as needed
+      padding: EdgeInsets.all(10), // Adjust padding as needed
+      child: Text(
+        text,
+      ),
+    );
+  }
+
   Widget _buildButton(String text, VoidCallback onPressed) {
     return ElevatedButton(
       onPressed: onPressed,
       child: Text(text),
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Color.fromRGBO(51, 43, 138, 1)),
-        foregroundColor: MaterialStateProperty.all(Colors.white),
-        textStyle: MaterialStateProperty.all(
-          TextStyle(fontWeight: FontWeight.bold),
-        ),
+        backgroundColor: MaterialStateProperty.all(ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor),
+        textStyle: MaterialStateProperty.all( TextStyle(fontWeight: FontWeight.bold)),
       ),
     );
   }
