@@ -1,5 +1,6 @@
 import 'dart:async';
 
+
 import 'package:alarm/alarm.dart';
 import 'package:alarm/model/alarm_settings.dart';
 import 'edit_alarm.dart';
@@ -9,17 +10,22 @@ import 'tile.dart';
 import 'package:flutter/material.dart';
 //import 'package:permission_handler/permission_handler.dart';
 
+
 class ExampleAlarmHomeScreen extends StatefulWidget {
   const ExampleAlarmHomeScreen({Key? key}) : super(key: key);
+
 
   @override
   State<ExampleAlarmHomeScreen> createState() => _ExampleAlarmHomeScreenState();
 }
 
+
 class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
   late List<AlarmSettings> alarms;
 
+
   static StreamSubscription<AlarmSettings>? subscription;
+
 
   @override
   void initState() {
@@ -36,12 +42,14 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
     );
   }
 
+
   void loadAlarms() {
     setState(() {
       alarms = Alarm.getAlarms();
       alarms.sort((a, b) => a.dateTime.isBefore(b.dateTime) ? 0 : 1);
     });
   }
+
 
   Future<void> navigateToRingScreen(AlarmSettings alarmSettings) async {
     try {
@@ -57,6 +65,7 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
     }
   }
 
+
   Future<void> navigateToAlarmScreen(AlarmSettings? settings) async {
     final res = await showModalBottomSheet<bool?>(
         context: context,
@@ -71,14 +80,17 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
           );
         });
 
+
     if (res != null && res == true) loadAlarms();
   }
+
 
   @override
   void dispose() {
     subscription?.cancel();
     super.dispose();
   }
+
 
   @override
   Widget build(BuildContext context) {

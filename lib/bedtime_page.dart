@@ -109,8 +109,11 @@ class _BedtimePageState extends State<BedtimePage> {
                             wakeupTimeDay!.year,
                             wakeupTimeDay!.month,
                             wakeupTimeDay!.day,
+                            wakeupTime!.hour,
+                            wakeupTime!.minute,
                           );
                           AlarmSetter.setWakeupAlarm(wakeupTimeDay, wakeupTime);
+                          AlarmSetter.sendBedtimeNotification(wakeupDateTime);
                           //End of Alarm Code
                       },
                       child: const Text('Confirm'),

@@ -48,10 +48,10 @@ void main() async {
           ledColor: Colors.white,
           importance: NotificationImportance.High,
         ),
-        // Include other channels as needed
       ],
       debug: true
   );
+  // End of Wakeup Notification Code
 
 
 

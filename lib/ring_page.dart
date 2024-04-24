@@ -1,13 +1,16 @@
+import 'package:flutter/material.dart';
 import 'package:alarm/alarm.dart';
 import 'package:alarm/model/alarm_settings.dart';
-import 'package:flutter/material.dart';
 import 'alarm_setter.dart';
+
 
 class ExampleAlarmRingScreen extends StatelessWidget {
   final AlarmSettings alarmSettings;
 
+
   const ExampleAlarmRingScreen({Key? key, required this.alarmSettings})
       : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +52,6 @@ class ExampleAlarmRingScreen extends StatelessWidget {
                 RawMaterialButton(
                   onPressed: () async {
                     await Alarm.stop(alarmSettings.id);
-                    AlarmRepository.removeAlarm(alarmSettings.id);  // Remove the alarm from the repository
                     Navigator.pop(context);  // Close the screen
                   },
                   child: Text(
