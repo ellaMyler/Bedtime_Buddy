@@ -19,10 +19,8 @@ Future<int> getSleepTime(String date) async {
   int hours = await getSleepHours(date);
   int minutes = await getSleepMinutes(date);
   int intTime = sleepTimeInMinutes(hours, minutes);
-
   return intTime;
 }
-
 Future<int> getSleepHours(String date) async {
   final hours = FirebaseDatabase.instance.ref();
   int time = 0;
@@ -40,7 +38,6 @@ Future<int> getSleepHours(String date) async {
     return -1;
   }
 }
-
 Future<int> getSleepMinutes(String date) async {
   final minutes = FirebaseDatabase.instance.ref();
   int time = 0;
@@ -58,9 +55,15 @@ Future<int> getSleepMinutes(String date) async {
     return -1;
   }
 }
-
 int sleepTimeInMinutes(int hours, int minutes) {
   return (hours * 60) + minutes;
+}
+Future<int> calcWeeklyAveSleep(List<String> dates) async {
+  int totalSleepTime = 0;
+  for (String date in dates) {
+    totalSleepTime += await getSleepTime(date);
+  }
+  return totalSleepTime ~/ dates.length;
 }
 
 Future<int> getStress(String date) async {
@@ -80,13 +83,19 @@ Future<int> getStress(String date) async {
     return -1;
   }
 }
-
 Future<int> getStressLevel(String date) async {
   int stress = await getStress(date);
 
   print("Stress Level: $stress");
 
   return stress;
+}
+Future<int> calcWeeklyAveStress (List<String> dates) async {
+  int totalStress = 0;
+  for (String date in dates) {
+    totalStress += await getStressLevel(date);
+  }
+  return totalStress ~/ dates.length;
 }
 
 Future<int> getQuality(String date) async {
@@ -106,42 +115,17 @@ Future<int> getQuality(String date) async {
     return -1;
   }
 }
-
 Future<int> getQualityLevel(String date) async {
   int quality = await getQuality(date);
 
-  print("Stress Level: $quality");
+  print("Quality of Sleep: $quality");
 
   return quality;
 }
-
-Future<int> calculateWeeklyAverage(List<String> dates) async {
-  int totalSleepTime = 0;
+Future<int> calcWeeklyAveQuality (List<String> dates) async {
+  int quality = 0;
   for (String date in dates) {
-    totalSleepTime += await getSleepTime(date);
+    quality += await getQualityLevel(date);
   }
-  return totalSleepTime ~/ dates.length;
-}
-
-Future<int> getFormattedWeeklyAverage() async {
-  List<String> dates = [
-    "April 14, 2024",
-    "April 15, 2024",
-    "April 16, 2024",
-    "April 17, 2024",
-    "April 18, 2024",
-    "April 19, 2024",
-    "April 20, 2024",
-  ];
-
-  /*int totalSleepTime = await calculateWeeklyAverage(dates);
-  int hours = totalSleepTime ~/ 60;
-  int minutes = totalSleepTime % 60;
-
-  String formattedDuration = "$hours hours";
-  if (minutes > 0) {
-    formattedDuration += "$minutes minutes";
-  } */
-
-  return calculateWeeklyAverage(dates);
+  return quality ~/ dates.length;
 }

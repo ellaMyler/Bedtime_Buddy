@@ -15,6 +15,11 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
   TextEditingController _controller = TextEditingController();
   final List<String> goals = [];
   List<bool> isChecked = List.generate(7, (index) => false);
+  List<String> dates = [
+    "April 14, 2024", "April 15, 2024", "April 16, 2024",
+    "April 17, 2024", "April 18, 2024", "April 19, 2024",
+    "April 20, 2024",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -42,12 +47,13 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
                     lineBarsData: [
                       LineChartBarData(
                         spots: [
-                          FlSpot(1, 3),
-                          FlSpot(3, 6),
-                          FlSpot(4, 8),
-                          FlSpot(5, 4),
-                          FlSpot(6, 7),
-                          FlSpot(7, 9),
+                          FlSpot(1, 10.9), //Sunday (14)
+                          FlSpot(2, 8.2), //Monday (15)
+                          FlSpot(3, 12.3), //Tuesday (16)
+                          FlSpot(4, 6.19), // Wednesday (17)
+                          FlSpot(5, 7.2), //Thursday (18)
+                          FlSpot(6, 6.1), //Friday (19)
+                          FlSpot(7, 5.11), //Saturday (20)
                         ],
                         isCurved: true,
                         barWidth: 8,
@@ -165,54 +171,50 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
               SizedBox(height: 15),
               Container(
                 width: 350,
-                height: 200,
+                height: 125,
                 decoration: BoxDecoration(
                   border: Border.all(color:Colors.black),
                 ),
-                child: Column (
-                /*FutureBuilder <int> (
-                  future: getFormattedWeeklyAverage(),
+                child: FutureBuilder <void> (
+                  future: Future.wait([
+                    calcWeeklyAveSleep(dates),
+                    calcWeeklyAveStress(dates),
+                    calcWeeklyAveQuality(dates),
+                  ]),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
-                      return Center(
-                          child: CircularProgressIndicator()); // Or any loading indicator widget
+                      return Center(child: CircularProgressIndicator()); // Or any loading indicator widget
                     } else if (snapshot.hasError) {
-                      return Text('Error: ${snapshot.error}');
+                      return Center(child: Text('Error: ${snapshot.error}'));
                     } else {
-                      return Center(
-                        child: Text(
-                          "Weekly Average Sleep Time: ${snapshot.data}",
-                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
-                        ),
+                      final List<int> averages = snapshot.data as List<int>;
+                      final int sleepAveMinutes = averages[0];
+                      final int stressAve = averages[1];
+                      final int qualityAve = averages [2];
+                      
+                      int sleepAveHours = sleepAveMinutes ~/ 60;
+                      int sleepAveMin = sleepAveMinutes % 60;
+                    
+                      return Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text ('On Average, you slept $sleepAveHours hours '
+                              'and $sleepAveMin minutes this week', 
+                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)),
+                          Text('On Average, your stress level was $stressAve this week',
+                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)),
+                          Text('On Average, your quality of sleep this week was $qualityAve',
+                              style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal))
+                        ],
                       );
                     }
-                  }, */
-
-
-                  children:  [
-                    Text("$getFormattedWeeklyAverage()",
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)
-                    ),
-                    Text('On Average, your stress level was __ this week',
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)
-                    ),
-                    Text('On Average, your quality of sleep this week was ___ ',
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)
-                    ),
-                  ]
+                  },
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  getSleepTime("April 14, 2024");
-                  getStressLevel("April 14, 2024");
-                  getQualityLevel("April 14, 2024");
-                  //getFormattedWeeklyAverage();
-                },
-                child: Text('Get Data'),
-              ),
-      ]
-        )));
+            ]
+          )
+        )
+    );
   }
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
@@ -264,9 +266,6 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
     );
     String text;
     switch (value.toInt()) {
-      case 2:
-        text = '2';
-        break;
       case 4:
         text = '4';
         break;
@@ -278,6 +277,12 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
         break;
       case 10:
         text = '10';
+        break;
+      case 12:
+        text = '12';
+        break;
+      case 14:
+        text = '14';
         break;
       default:
         return Container();
