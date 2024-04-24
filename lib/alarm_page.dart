@@ -27,7 +27,13 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
     super.initState();
     loadAlarms();
     subscription ??= Alarm.ringStream.stream.listen(
-          (alarmSettings) => navigateToRingScreen(alarmSettings),
+          (alarmSettings) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) {
+            navigateToRingScreen(alarmSettings);
+          }
+        });
+      },
     );
   }
 
@@ -39,13 +45,17 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
   }
 
   Future<void> navigateToRingScreen(AlarmSettings alarmSettings) async {
-    await Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ExampleAlarmRingScreen(alarmSettings: alarmSettings),
-      ),
-    );
-    loadAlarms();
+    try {
+      await Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ExampleAlarmRingScreen(alarmSettings: alarmSettings),
+        ),
+      );
+      loadAlarms();  // Refresh alarms after returning from the ring screen
+    } catch (e) {
+      print('Failed to navigate: $e');  // Log any errors encountered during navigation
+    }
   }
 
   Future<void> navigateToAlarmScreen(AlarmSettings? settings) async {
