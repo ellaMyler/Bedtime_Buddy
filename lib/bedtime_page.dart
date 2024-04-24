@@ -52,6 +52,11 @@ class _BedtimePageState extends State<BedtimePage> {
                     },
                     icon: Icon(Icons.bedtime),
                     label: const Text('Set Bedtime'),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor,
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton.icon(
@@ -60,6 +65,11 @@ class _BedtimePageState extends State<BedtimePage> {
                     },
                     icon: Icon(Icons.wb_sunny),
                     label: const Text('Set Wakeup'),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor,
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton.icon(
@@ -69,6 +79,11 @@ class _BedtimePageState extends State<BedtimePage> {
                     },
                     icon: Icon(Icons.refresh),
                     label: const Text('Set Previous'),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor,
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 20),
                   if (bedtime != null && wakeupTime != null)
