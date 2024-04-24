@@ -59,7 +59,6 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
                         barWidth: 8,
                       ),
                     ],
-                    minY: 0,
                     titlesData: FlTitlesData (
                       show: true,
                       topTitles: const AxisTitles(
@@ -203,7 +202,7 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
                             style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)),
                           Text('On Average, your stress level was $stressAve this week',
                             style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)),
-                          Text('On Average, your quality of sleep this week was $qualityAve',
+                          Text('On Average, your quality of sleep  was $qualityAve this week',
                               style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal))
                         ],
                       );
@@ -266,6 +265,9 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
     );
     String text;
     switch (value.toInt()) {
+      case 2:
+        text = '2';
+        break;
       case 4:
         text = '4';
         break;
@@ -322,14 +324,4 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
     },
     );
   }
-
-   void readData() async {
-     final ref = FirebaseDatabase.instance.ref();
-     final snapshot = await ref.child('-NtXYmtubEemw7cEQFNI/message').get();
-     if (snapshot.exists){
-       print(snapshot.value);
-     } else {
-       print('No data available');
-     }
-   }
 }
