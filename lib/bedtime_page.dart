@@ -23,15 +23,13 @@ class _BedtimePageState extends State<BedtimePage> {
         title: const Text(
           'Bedtime/Wakeup',
           style: TextStyle(
-            color: Colors.white, // Text color
-            fontWeight: FontWeight.bold, // Bold text
-            //centerTitle: true,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: true,
         backgroundColor: Color.fromRGBO(9, 7, 61, 1),
       ),
-
       body: Stack(
         children: [
           Container(
@@ -42,86 +40,61 @@ class _BedtimePageState extends State<BedtimePage> {
               ),
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              const Align(
-                alignment: Alignment.topCenter,
-                child: Padding(
+          SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const Padding(
                   padding: EdgeInsets.only(top: 40.0),
                   child: Text(
-                      '!Recommended sleep time is 8 hours!',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                        color: Colors.white, // Adjust text color for visibility
-                      )
+                    '!Recommended sleep time is 8 hours!',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
-              ),
-              const Expanded(
-                child: SizedBox(),
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    _buildButton('Set Bedtime', () {
-                      _selectTime(true);
-                      _showConfirmationDialog();
-                      sendBedtime('Bedtime', bedtimeDay.toString(), bedtime.toString());
-                      sendBedtime('WakeupTime', wakeupTimeDay.toString(), wakeupTime.toString());
-                      //Notification Code
-                      final bedtimeDateTime = DateTime(
-                        bedtimeDay!.year,
-                        bedtimeDay!.month,
-                        bedtimeDay!.day,
-                        bedtime!.hour,
-                        bedtime!.minute,
-                      );
-                      NotificationService.sendBedtimeNotification(bedtimeDateTime);
-                      //End of Notification Code
-                    }),
-                    const SizedBox(height: 20),
-                    _buildButton('Set Wakeup Time', () {
-                      _selectTime(false);
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Color.fromRGBO(51, 43, 138, 1)),
-                        foregroundColor: MaterialStateProperty.all(Colors.white),
-                        textStyle: MaterialStateProperty.all(
-                          TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      );
-                    }),
-                    const SizedBox(height: 20),
-                    _buildButton('Set Previous', () {
-                      // Implement functionality or remove if not needed
-                    }),
-                    const SizedBox(height: 20),
-                    bedtime != null && wakeupTime != null
-                        ? Column(
-                      children: [
-                        Text(
-                            'Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}', style: TextStyle(color: Colors.white)),
-                        Text(
-                            'Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}', style: TextStyle(color: Colors.white)),
-                        Text(
-                            'You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!, bedtimeDay!, wakeupTimeDay!)}', style: TextStyle(color: Colors.white)),
-                        const SizedBox(height: 20),
-                        _buildButton('Confirm', () {
-                          _showConfirmationDialog();
-                          sendBedtime('Bedtime', bedtimeDay.toString(), bedtime.toString());
-                          sendBedtime('WakeupTime', wakeupTimeDay.toString(), wakeupTime.toString());
-                        }),
-                        const SizedBox(height: 40),
-                      ],
-                    )
-                        : const SizedBox(height: 20),
-                  ],
-                ),
-              ),
-            ],
+                SizedBox(height: 20),
+                _buildButton('Set Bedtime', () {
+                  _selectTime(true);
+                }),
+                SizedBox(height: 20),
+                _buildButton('Set Wakeup Time', () {
+                  _selectTime(false);
+                }),
+                SizedBox(height: 20),
+                _buildButton('Set Previous', () {
+                  // Implement functionality or remove if not needed
+                }),
+                if (bedtime != null && wakeupTime != null)
+                  Column(
+                    children: [
+                      Text(
+                        'Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        'Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        'You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!, bedtimeDay!, wakeupTimeDay!)}',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      SizedBox(height: 20),
+                      _buildButton('Confirm', () {
+                        _showConfirmationDialog();
+                        sendBedtime('Bedtime', bedtimeDay.toString(), bedtime.toString());
+                        sendBedtime('WakeupTime', wakeupTimeDay.toString(), wakeupTime.toString());
+                      }),
+                      SizedBox(height: 40),
+                    ],
+                  ),
+                SizedBox(height: 20),
+              ],
+            ),
           ),
         ],
       ),
