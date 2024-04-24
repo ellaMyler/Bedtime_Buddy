@@ -31,11 +31,12 @@ void sendSleepLog (String dateLogged, String sleepThoughts, String dreamNight, S
 void readData() async {
   final ref = FirebaseDatabase.instance.ref();
   final snapshot = await ref.child('April 4, 2024/message').get();
-  if (snapshot.exists){
+  if (snapshot.exists) {
     print(snapshot.value);
   } else {
     print('No data available');
   }
+}
 
 Future<int> getSleepTime(String date) async {
   int hours = await getSleepHours(date);
@@ -108,10 +109,11 @@ Future<int> getStress(String date) async {
 Future<int> getStressLevel(String date) async {
   int stress = await getStress(date);
 
-  print("Stress Level: $stress");
+  //print("Stress Level: $stress");
 
   return stress;
 }
+
 Future<int> calcWeeklyAveStress (List<String> dates) async {
   int totalStress = 0;
   for (String date in dates) {
@@ -140,7 +142,7 @@ Future<int> getQuality(String date) async {
 Future<int> getQualityLevel(String date) async {
   int quality = await getQuality(date);
 
-  print("Quality of Sleep: $quality");
+  //print("Quality of Sleep: $quality");
 
   return quality;
 }
