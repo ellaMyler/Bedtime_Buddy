@@ -3,7 +3,6 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:theme_provider/theme_provider.dart';
-
 import 'main.dart';
 import 'package:sleep_tracker/database.dart';
 
@@ -330,3 +329,4 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
     );
   }
 }
+

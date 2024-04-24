@@ -3,7 +3,6 @@ import 'package:sleep_tracker/database.dart';
 import 'package:theme_provider/theme_provider.dart';
 import 'main.dart';
 
-
 class BedtimePage extends StatefulWidget {
   const BedtimePage({Key? key}) : super(key: key);
 
@@ -24,10 +23,11 @@ class _BedtimePageState extends State<BedtimePage> {
       appBar: AppBar(
         title: const Text(
           'Bedtime/Wakeup',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        backgroundColor: ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor,
+        backgroundColor:
+        ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor,
       ),
       body: Stack(
         children: [
@@ -40,61 +40,59 @@ class _BedtimePageState extends State<BedtimePage> {
             ),
           ),
           SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 40.0), // Adjust padding values as needed
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10), // Optional: Add border radius for rounded corners
-                      color: ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor, // Optional: Change background color
-                    ),
-                    child: const Text(
-                      '!Recommended sleep time is 8 hours!',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                  vertical: 20.0, horizontal: 40.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      _selectTime(true);
+                    },
+                    icon: Icon(Icons.bedtime),
+                    label: const Text('Set Bedtime'),
                   ),
-                ),
-                SizedBox(height: 20),
-                _buildButton('Set Bedtime', () {
-                  _selectTime(true);
-                }),
-                SizedBox(height: 20),
-                _buildButton('Set Wakeup Time', () {
-                  _selectTime(false);
-                }),
-                SizedBox(height: 20),
-                _buildButton('Set Previous', () {
-
-                }),
-                if (bedtime != null && wakeupTime != null)
-                  Column(
-                    children: [
-                      _buildTextWithBox(
-                        'Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}',
-                      ),
-                      _buildTextWithBox(
-                        'Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}',
-                      ),
-                      _buildTextWithBox(
-                        'You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!, bedtimeDay!, wakeupTimeDay!)}',
-                      ),
-                      SizedBox(height: 20),
-                      _buildButton('Confirm', () {
-                        _showConfirmationDialog();
-                        sendBedtime('Bedtime', bedtimeDay.toString(), bedtime.toString());
-                        sendBedtime('WakeupTime', wakeupTimeDay.toString(), wakeupTime.toString());
-                      }),
-                      SizedBox(height: 40),
-                    ],
+                  const SizedBox(height: 20),
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      _selectTime(false);
+                    },
+                    icon: Icon(Icons.wb_sunny),
+                    label: const Text('Set Wakeup'),
                   ),
-                SizedBox(height: 20),
-              ],
+                  const SizedBox(height: 20),
+                  ElevatedButton.icon(
+                    onPressed: () async {
+                      await setPrevious();
+                      print(bedtime!);
+                    },
+                    icon: Icon(Icons.refresh),
+                    label: const Text('Set Previous'),
+                  ),
+                  const SizedBox(height: 20),
+                  if (bedtime != null && wakeupTime != null)
+                    Column(
+                      children: [
+                        Text(
+                            'Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}'),
+                        Text(
+                            'Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}'),
+                        Text(
+                            'You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!, bedtimeDay!, wakeupTimeDay!)}'),
+                        const SizedBox(height: 20),
+                        ElevatedButton(
+                          onPressed: () {
+                            _showConfirmationDialog();
+                            storePrevious(bedtime!, bedtimeDay!, wakeupTime!,
+                                wakeupTimeDay!);
+                          },
+                          child: const Text('Confirm'),
+                        ),
+                      ],
+                    ),
+                ],
+              ),
             ),
           ),
         ],
@@ -105,11 +103,11 @@ class _BedtimePageState extends State<BedtimePage> {
   Widget _buildTextWithBox(String text) {
     return Container(
       decoration: BoxDecoration(
-        color: ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor, // Change color as needed
-        borderRadius: BorderRadius.circular(10), // Adjust border radius as needed
+        color: ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor,
+        borderRadius: BorderRadius.circular(10),
       ),
-      margin: EdgeInsets.symmetric(vertical: 5), // Adjust margin as needed
-      padding: EdgeInsets.all(10), // Adjust padding as needed
+      margin: EdgeInsets.symmetric(vertical: 5),
+      padding: EdgeInsets.all(10),
       child: Text(
         text,
       ),
@@ -121,8 +119,12 @@ class _BedtimePageState extends State<BedtimePage> {
       onPressed: onPressed,
       child: Text(text),
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(ThemeProvider.optionsOf<MyThemeOptions>(context).backgroundColor),
-        textStyle: MaterialStateProperty.all( TextStyle(fontWeight: FontWeight.bold)),
+        backgroundColor:
+        MaterialStateProperty.all(ThemeProvider.optionsOf<MyThemeOptions>(
+            context)
+            .backgroundColor),
+        textStyle:
+        MaterialStateProperty.all(TextStyle(fontWeight: FontWeight.bold)),
       ),
     );
   }
@@ -171,10 +173,10 @@ class _BedtimePageState extends State<BedtimePage> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Bedtime: ${bedtime != null && bedtimeDay != null ? "${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}" : "Not set"}'),
-              Text('Wakeup Time: ${wakeupTime != null && wakeupTimeDay != null ? "${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}" : "Not set"}')
-              //Text('Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}'),
-              //Text('Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}'),
+              Text(
+                  'Bedtime: ${bedtime != null && bedtimeDay != null ? "${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}" : "Not set"}'),
+              Text(
+                  'Wakeup Time: ${wakeupTime != null && wakeupTimeDay != null ? "${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}" : "Not set"}'),
             ],
           ),
           actions: <Widget>[
@@ -204,9 +206,12 @@ class _BedtimePageState extends State<BedtimePage> {
     return '$day/$month/$year';
   }
 
-  String _calculateSleepDuration(TimeOfDay bedtime, TimeOfDay wakeupTime, DateTime bedtimeDay, DateTime wakeupTimeDay) {
-    final bedtimeDateTime = DateTime(bedtimeDay.year, bedtimeDay.month, bedtimeDay.day, bedtime.hour, bedtime.minute);
-    final wakeupDateTime = DateTime(wakeupTimeDay.year, wakeupTimeDay.month, wakeupTimeDay.day, wakeupTime.hour, wakeupTime.minute);
+  String _calculateSleepDuration(
+      TimeOfDay bedtime, TimeOfDay wakeupTime, DateTime bedtimeDay, DateTime wakeupTimeDay) {
+    final bedtimeDateTime =
+    DateTime(bedtimeDay.year, bedtimeDay.month, bedtimeDay.day, bedtime.hour, bedtime.minute);
+    final wakeupDateTime =
+    DateTime(wakeupTimeDay.year, wakeupTimeDay.month, wakeupTimeDay.day, wakeupTime.hour, wakeupTime.minute);
 
     // Add 1 day to wakeup time if it's before bedtime
     if (wakeupDateTime.isBefore(bedtimeDateTime)) {
@@ -228,6 +233,32 @@ class _BedtimePageState extends State<BedtimePage> {
       }
     }
     return durationText;
+  }
+
+  Future<void> setPrevious() async {
+    await readPrevious();
+    setState(() {
+      bedtime = previousBedTime;
+      bedtimeDay = previousBedtimeDay?.add(const Duration(days: 1));
+      wakeupTime = previousWakeupTime;
+      wakeupTimeDay = previousWakeupTimeDay?.add(const Duration(days: 1));
+    });
+  }
+
+  TimeOfDay? getBedtime() {
+    return bedtime;
+  }
+
+  DateTime? getBedtimeDay() {
+    return bedtimeDay;
+  }
+
+  TimeOfDay? getWakeupTime() {
+    return wakeupTime;
+  }
+
+  DateTime? getWakeupTimeDay() {
+    return wakeupTimeDay;
   }
 }
 
