@@ -2,6 +2,7 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:sleep_tracker/database.dart';
 
 //Stats Page
 class SleepStatsPage extends StatefulWidget {
@@ -169,8 +170,27 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
                   border: Border.all(color:Colors.black),
                 ),
                 child: Column (
+                /*FutureBuilder <int> (
+                  future: getFormattedWeeklyAverage(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return Center(
+                          child: CircularProgressIndicator()); // Or any loading indicator widget
+                    } else if (snapshot.hasError) {
+                      return Text('Error: ${snapshot.error}');
+                    } else {
+                      return Center(
+                        child: Text(
+                          "Weekly Average Sleep Time: ${snapshot.data}",
+                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal),
+                        ),
+                      );
+                    }
+                  }, */
+
+
                   children:  [
-                    Text('On Average, you slept _____ hours this week',
+                    Text("$getFormattedWeeklyAverage()",
                         style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)
                     ),
                     Text('On Average, your stress level was __ this week',
@@ -180,11 +200,14 @@ class _SleepStatsPageState extends State<SleepStatsPage> {
                         style: TextStyle(fontSize: 15, fontWeight: FontWeight.normal)
                     ),
                   ]
-                )
+                ),
               ),
               ElevatedButton(
                 onPressed: () {
-                  readData();
+                  getSleepTime("April 14, 2024");
+                  getStressLevel("April 14, 2024");
+                  getQualityLevel("April 14, 2024");
+                  //getFormattedWeeklyAverage();
                 },
                 child: Text('Get Data'),
               ),
