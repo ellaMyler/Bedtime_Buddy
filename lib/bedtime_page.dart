@@ -206,9 +206,9 @@ class _BedtimePageState extends State<BedtimePage> {
     await readPrevious();
     setState(() {
       bedtime = previousBedTime;
-      bedtimeDay = previousBedtimeDay;
+      bedtimeDay = previousBedtimeDay?.add(const Duration(days: 1));
       wakeupTime = previousWakeupTime;
-      wakeupTimeDay = previousWakeupTimeDay;
+      wakeupTimeDay = previousWakeupTimeDay?.add(const Duration(days: 1));
     });
   }
 
