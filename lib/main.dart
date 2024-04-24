@@ -57,8 +57,7 @@ void main() async {
   runApp(const SleepTrackerApp());
 }
 
-class SleepTrackerApp extends StatelessWidget {
-  const SleepTrackerApp({Key? key}) : super(key: key);
+
 
 class SleepTrackerApp extends StatelessWidget{
   const SleepTrackerApp({super.key});
@@ -95,3 +94,4 @@ class SleepTrackerApp extends StatelessWidget{
     );
   }
 }
+
