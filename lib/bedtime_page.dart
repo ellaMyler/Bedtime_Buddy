@@ -85,9 +85,9 @@ class _BedtimePageState extends State<BedtimePage> {
                   if (bedtime != null && wakeupTime != null)
                     Column(
                       children: [
-                        Text('Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}'),
-                        Text('Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}'),
-                        Text('You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!, bedtimeDay!, wakeupTimeDay!)}'),
+                        //Text('Bedtime: ${_formatTime(bedtime!)} on ${_formatDate(bedtimeDay!)}'),
+                        //Text('Wakeup Time: ${_formatTime(wakeupTime!)} on ${_formatDate(wakeupTimeDay!)}'),
+                        //Text('You will sleep for ${_calculateSleepDuration(bedtime!, wakeupTime!, bedtimeDay!, wakeupTimeDay!)}'),
                         const SizedBox(height: 20),
                         ElevatedButton(
                           onPressed: () {
